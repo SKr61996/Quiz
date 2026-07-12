@@ -296,6 +296,67 @@ const Quiz = {
         this.loadQuestion();
 
     },
+    /* ==========================================
+   Prüfungsmodus starten
+========================================== */
+
+startExam() {
+
+    const questionCountElement =
+        document.getElementById(
+            "exam-question-count"
+        );
+
+    const timerElement =
+        document.getElementById(
+            "exam-timer"
+        );
+
+    let examQuestions =
+        [...getAllQuestions()];
+
+    this.shuffleArray(
+        examQuestions
+    );
+
+    const selectedCount =
+        questionCountElement
+            ? questionCountElement.value
+            : "20";
+
+    if (selectedCount !== "all") {
+
+        const maximum =
+            Number(selectedCount);
+
+        examQuestions =
+            examQuestions.slice(
+                0,
+                maximum
+            );
+
+    }
+
+    this.state.questions =
+        examQuestions;
+
+    this.state.currentQuestion = 0;
+    this.state.score = 0;
+    this.state.answered = 0;
+    this.state.mode = "pruefung";
+
+    this.state.timerDuration =
+        timerElement
+            ? Number(timerElement.value)
+            : 0;
+
+    this.updateStatistics();
+
+    this.showLearningQuiz();
+
+    this.loadQuestion();
+
+},
 
     /* ==========================================
        Thema einer Frage bestimmen

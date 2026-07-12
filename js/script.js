@@ -141,25 +141,40 @@ document.addEventListener("DOMContentLoaded", () => {
        Prüfung starten
     ========================================== */
 
-    const startExamButton =
-        document.getElementById(
-            "start-exam"
-        );
+   /* ==========================================
+   Prüfung starten
+========================================== */
 
-    if (startExamButton) {
+const startExamButton =
+    document.getElementById(
+        "start-exam"
+    );
 
-        startExamButton.addEventListener(
-            "click",
-            () => {
+if (startExamButton) {
+
+    startExamButton.addEventListener(
+        "click",
+        () => {
+
+            if (
+                typeof Quiz !== "undefined" &&
+                typeof Quiz.startExam === "function"
+            ) {
+
+                Quiz.startExam();
+
+            } else {
 
                 alert(
-                    "Der Prüfungsmodus wird noch separat eingerichtet."
+                    "Die Funktion startExam() wurde in quiz.js nicht gefunden."
                 );
 
             }
-        );
 
-    }
+        }
+    );
+
+}
 
     /* ==========================================
        Startseite
