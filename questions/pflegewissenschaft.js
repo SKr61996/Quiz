@@ -1414,5 +1414,482 @@ const pflegewissenschaftQuestions = [
 
     explanation:
         "Für qualitative Interviews wird ein weicher Kommunikationsstil beschrieben, der sympathisch, empathisch, respektvoll und interessiert ist."
-}
+},
+{
+    id: 466,
+    type: "single",
+    difficulty: "leicht",
+    category: "skalenniveaus",
+    question: "Was versteht man unter einem Skalenniveau?",
+    answers: [
+        "Die Art und Weise, wie Merkmale gemessen und ausgewertet werden können.",
+        "Die Anzahl der Teilnehmenden einer Studie.",
+        "Die Qualität einer wissenschaftlichen Untersuchung.",
+        "Die Größe einer Stichprobe."
+    ],
+    correct: 0,
+    explanation: "Das Skalenniveau bestimmt, welche mathematischen und statistischen Auswertungen mit den erhobenen Daten zulässig sind."
+},
+
+{
+    id: 467,
+    type: "single",
+    difficulty: "leicht",
+    category: "skalenniveaus",
+    question: "Welche vier Skalenniveaus werden unterschieden?",
+    answers: [
+        "Nominal-, Ordinal-, Intervall- und Verhältnisskala",
+        "Nominal-, Prozent-, Intervall- und Absolutskala",
+        "Ordinal-, Dezimal-, Verhältnis- und Absolutskala",
+        "Nominal-, Rang-, Prozent- und Intervallskala"
+    ],
+    correct: 0,
+    explanation: "Es werden vier klassische Skalenniveaus unterschieden: Nominal-, Ordinal-, Intervall- und Verhältnisskala."
+},
+
+{
+    id: 468,
+    type: "single",
+    difficulty: "leicht",
+    category: "skalenniveaus",
+    question: "Welches Skalenniveau besitzt die Blutgruppe?",
+    answers: [
+        "Nominalskala",
+        "Ordinalskala",
+        "Intervallskala",
+        "Verhältnisskala"
+    ],
+    correct: 0,
+    explanation: "Blutgruppen sind Kategorien ohne natürliche Reihenfolge und daher nominalskaliert."
+},
+
+{
+    id: 469,
+    type: "single",
+    difficulty: "leicht",
+    category: "skalenniveaus",
+    question: "Welches Merkmal kennzeichnet die Nominalskala?",
+    answers: [
+        "Die Merkmalsausprägungen können nur unterschieden werden.",
+        "Die Merkmale können geordnet werden.",
+        "Die Abstände zwischen den Werten sind gleich.",
+        "Es existiert ein absoluter Nullpunkt."
+    ],
+    correct: 0,
+    explanation: "Bei der Nominalskala können Merkmale lediglich verschiedenen Kategorien zugeordnet werden."
+},
+
+{
+    id: 470,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welches Skalenniveau besitzt die Schmerzskala 'keine Schmerzen', 'leichte', 'mittlere' und 'starke Schmerzen'?",
+    answers: [
+        "Ordinalskala",
+        "Nominalskala",
+        "Intervallskala",
+        "Verhältnisskala"
+    ],
+    correct: 0,
+    explanation: "Die Ausprägungen besitzen eine Rangfolge, die Abstände sind jedoch nicht gleich groß."
+},
+
+{
+    id: 471,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welches Merkmal beschreibt die Ordinalskala?",
+    answers: [
+        "Die Werte können in eine sinnvolle Reihenfolge gebracht werden.",
+        "Es existiert ein natürlicher Nullpunkt.",
+        "Die Abstände zwischen den Werten sind gleich groß.",
+        "Es können nur Kategorien gebildet werden."
+    ],
+    correct: 0,
+    explanation: "Die Ordinalskala erlaubt eine Rangordnung der Merkmale, jedoch keine Aussage über gleich große Abstände."
+},
+
+{
+    id: 472,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welches Beispiel ist intervallskaliert?",
+    answers: [
+        "Temperatur in Grad Celsius",
+        "Körpergewicht",
+        "Körpergröße",
+        "Anzahl der Medikamente"
+    ],
+    correct: 0,
+    explanation: "Bei der Celsius-Skala sind die Abstände gleich groß, jedoch existiert kein natürlicher Nullpunkt."
+},
+
+{
+    id: 473,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Was kennzeichnet die Intervallskala?",
+    answers: [
+        "Gleiche Abstände zwischen den Messwerten, aber kein natürlicher Nullpunkt.",
+        "Nur eine Rangfolge der Werte.",
+        "Ein absoluter Nullpunkt.",
+        "Nur unterschiedliche Kategorien."
+    ],
+   correct: 0,
+    explanation: "Intervallskalierte Merkmale besitzen gleiche Abstände, jedoch keinen absoluten Nullpunkt."
+},
+
+{
+    id: 474,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welches Beispiel ist verhältnisskaliert?",
+    answers: [
+        "Körpergewicht in Kilogramm",
+        "Schulnoten",
+        "Blutgruppe",
+        "Schmerzstärke"
+    ],
+    correct: 0,
+    explanation: "Das Körpergewicht besitzt einen natürlichen Nullpunkt und gleiche Abstände zwischen den Messwerten."
+},
+
+{
+    id: 475,
+    type: "single",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welches Merkmal kennzeichnet die Verhältnisskala?",
+    answers: [
+        "Sie besitzt gleiche Abstände zwischen den Werten und einen absoluten Nullpunkt.",
+        "Sie erlaubt ausschließlich eine Rangordnung.",
+        "Sie besteht nur aus Kategorien.",
+        "Sie besitzt keinen natürlichen Nullpunkt."
+    ],
+    correct: 0,
+    explanation: "Die Verhältnisskala verfügt über gleiche Abstände sowie einen absoluten Nullpunkt. Dadurch sind Verhältnisangaben wie 'doppelt so schwer' möglich."
+},
+{
+    id: 476,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welcher statistische Kennwert kann bei nominalskalierten Daten sinnvoll bestimmt werden?",
+    answers: [
+        "Modus",
+        "Median",
+        "Arithmetisches Mittel",
+        "Standardabweichung"
+    ],
+    correct: 0,
+    explanation: "Bei nominalskalierten Daten kann lediglich der Modalwert (häufigste Ausprägung) sinnvoll bestimmt werden."
+},
+
+{
+    id: 477,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welcher statistische Kennwert kann bei ordinalskalierten Daten zusätzlich zum Modus bestimmt werden?",
+    answers: [
+        "Median",
+        "Arithmetisches Mittel",
+        "Varianz",
+        "Standardabweichung"
+    ],
+    correct: 0,
+    explanation: "Da ordinalskalierte Daten geordnet werden können, lässt sich zusätzlich der Median bestimmen."
+},
+
+{
+    id: 478,
+    type: "single",
+    difficulty: "mittel",
+    category: "skalenniveaus",
+    question: "Welcher statistische Kennwert kann bei intervall- und verhältnisskalierten Daten berechnet werden?",
+    answers: [
+        "Arithmetisches Mittel",
+        "Nur der Modus",
+        "Nur der Median",
+        "Keiner der genannten"
+    ],
+    correct: 0,
+    explanation: "Für intervall- und verhältnisskalierte Daten kann unter anderem das arithmetische Mittel berechnet werden."
+},
+
+{
+    id: 479,
+    type: "single",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welches Skalenniveau besitzt das Alter einer Person in Jahren?",
+    answers: [
+        "Verhältnisskala",
+        "Intervallskala",
+        "Ordinalskala",
+        "Nominalskala"
+    ],
+    correct: 0,
+    explanation: "Das Alter besitzt einen absoluten Nullpunkt und gleiche Abstände zwischen den Werten."
+},
+
+{
+    id: 480,
+    type: "single",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welches Skalenniveau besitzt die Körpertemperatur in Grad Celsius?",
+    answers: [
+        "Intervallskala",
+        "Verhältnisskala",
+        "Ordinalskala",
+        "Nominalskala"
+    ],
+    correct: 0,
+    explanation: "Die Celsius-Skala besitzt gleiche Abstände, jedoch keinen absoluten Nullpunkt."
+},
+
+{
+    id: 481,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welche Merkmale sind nominalskaliert?",
+    answers: [
+        "Blutgruppe",
+        "Geschlecht",
+        "Familienstand",
+        "Schmerzstärke"
+    ],
+    correct: [0,1,2],
+    explanation: "Nominalskalierte Merkmale bestehen aus Kategorien ohne natürliche Rangfolge. Die Schmerzstärke ist ordinalskaliert."
+},
+
+{
+    id: 482,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welche Merkmale sind ordinalskaliert?",
+    answers: [
+        "Schulnoten",
+        "Schmerzstärke",
+        "Pflegegrad",
+        "Körpergewicht"
+    ],
+    correct: [0,1,2],
+    explanation: "Ordinalskalierte Merkmale besitzen eine Rangfolge, aber keine gleich großen Abstände. Körpergewicht ist verhältnisskaliert."
+},
+
+{
+    id: 483,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welche Merkmale sind verhältnisskaliert?",
+    answers: [
+        "Körpergewicht",
+        "Körpergröße",
+        "Pulsfrequenz",
+        "Blutgruppe"
+    ],
+    correct: [0,1,2],
+    explanation: "Alle drei Merkmale besitzen einen absoluten Nullpunkt. Die Blutgruppe ist nominalskaliert."
+},
+
+{
+    id: 484,
+    type: "single",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Welches Skalenniveau ermöglicht Aussagen wie 'doppelt so hoch' oder 'halb so schwer'?",
+    answers: [
+        "Verhältnisskala",
+        "Intervallskala",
+        "Ordinalskala",
+        "Nominalskala"
+    ],
+    correct: 0,
+    explanation: "Solche Verhältnisangaben sind nur bei einer Verhältnisskala mit absolutem Nullpunkt zulässig."
+},
+
+{
+    id: 485,
+    type: "single",
+    difficulty: "schwer",
+    category: "skalenniveaus",
+    question: "Warum ist die Bestimmung des Skalenniveaus in der Forschung wichtig?",
+    answers: [
+        "Es bestimmt, welche statistischen Auswertungen zulässig sind.",
+        "Es legt die Größe der Stichprobe fest.",
+        "Es bestimmt die Qualität der Forschung.",
+        "Es entscheidet über die Ethik einer Studie."
+    ],
+    correct: 0,
+    explanation: "Das Skalenniveau bildet die Grundlage für die Auswahl geeigneter statistischer Verfahren und Kennwerte."
+},
+{
+    id: 486,
+    type: "single",
+    difficulty: "leicht",
+    category: "klinischepflegewissenschaft",
+    question: "Was ist das zentrale Ziel der klinischen Pflegewissenschaft?",
+    answers: [
+        "Die Verbesserung der pflegerischen Versorgung auf Grundlage wissenschaftlicher Erkenntnisse",
+        "Die Entwicklung neuer Medikamente",
+        "Die Ausbildung von Ärztinnen und Ärzten",
+        "Die Organisation von Pflegeeinrichtungen"
+    ],
+    correct: 0,
+    explanation: "Die klinische Pflegewissenschaft entwickelt und überprüft wissenschaftliche Erkenntnisse, um die Qualität der pflegerischen Versorgung zu verbessern."
+},
+
+{
+    id: 487,
+    type: "single",
+    difficulty: "leicht",
+    category: "klinischepflegewissenschaft",
+    question: "Womit beschäftigt sich die klinische Pflegewissenschaft hauptsächlich?",
+    answers: [
+        "Mit pflegerischen Fragestellungen in der direkten Versorgung von Menschen",
+        "Ausschließlich mit betriebswirtschaftlichen Themen",
+        "Nur mit medizinischen Diagnosen",
+        "Mit der Finanzierung von Krankenhäusern"
+    ],
+    correct: 0,
+    explanation: "Im Mittelpunkt stehen pflegerische Fragestellungen aus der direkten Patientenversorgung."
+},
+
+{
+    id: 488,
+    type: "multiple",
+    difficulty: "leicht",
+    category: "klinischepflegewissenschaft",
+    question: "Welche Aufgaben gehören zur klinischen Pflegewissenschaft?",
+    answers: [
+        "Entwicklung pflegerischer Interventionen",
+        "Überprüfung der Wirksamkeit von Pflegemaßnahmen",
+        "Verbesserung der Pflegequalität",
+        "Entwicklung wissenschaftlicher Erkenntnisse"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Die klinische Pflegewissenschaft entwickelt, überprüft und verbessert pflegerische Maßnahmen auf wissenschaftlicher Grundlage."
+},
+
+{
+    id: 489,
+    type: "single",
+    difficulty: "mittel",
+    category: "klinischepflegewissenschaft",
+    question: "Warum ist Forschung für die klinische Pflegewissenschaft wichtig?",
+    answers: [
+        "Sie liefert wissenschaftliche Grundlagen für professionelles pflegerisches Handeln.",
+        "Sie ersetzt praktische Erfahrungen vollständig.",
+        "Sie dient ausschließlich der Ausbildung.",
+        "Sie ist nur für Universitäten relevant."
+    ],
+    correct: 0,
+    explanation: "Forschung schafft die Grundlage für evidenzbasierte und qualitativ hochwertige Pflege."
+},
+
+{
+    id: 490,
+    type: "single",
+    difficulty: "mittel",
+    category: "klinischepflegewissenschaft",
+    question: "Welchen Beitrag leistet die klinische Pflegewissenschaft zur professionellen Pflege?",
+    answers: [
+        "Sie unterstützt eine wissenschaftlich begründete Entscheidungsfindung.",
+        "Sie ersetzt die pflegerische Erfahrung.",
+        "Sie beschränkt sich auf theoretische Modelle.",
+        "Sie entwickelt ausschließlich Dokumentationssysteme."
+    ],
+    correct: 0,
+    explanation: "Die klinische Pflegewissenschaft verbindet Forschung mit der pflegerischen Praxis."
+},
+
+{
+    id: 491,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "klinischepflegewissenschaft",
+    question: "Welche Bereiche profitieren von der klinischen Pflegewissenschaft?",
+    answers: [
+        "Patientinnen und Patienten",
+        "Pflegefachpersonen",
+        "Pflegeeinrichtungen",
+        "Das Gesundheitswesen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Die Erkenntnisse der klinischen Pflegewissenschaft verbessern die Versorgung auf verschiedenen Ebenen."
+},
+
+{
+    id: 492,
+    type: "single",
+    difficulty: "schwer",
+    category: "klinischepflegewissenschaft",
+    question: "Welches Ziel verfolgt die Evaluation pflegerischer Maßnahmen?",
+    answers: [
+        "Die Wirksamkeit und Qualität pflegerischer Interventionen zu überprüfen.",
+        "Die Anzahl der Pflegekräfte zu reduzieren.",
+        "Die Dokumentation zu verkürzen.",
+        "Die Liegedauer ausschließlich zu verlängern."
+    ],
+    correct: 0,
+    explanation: "Durch Evaluation wird überprüft, ob Pflegemaßnahmen ihre angestrebten Ziele erreichen."
+},
+
+{
+    id: 493,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "klinischepflegewissenschaft",
+    question: "Welche Merkmale kennzeichnen die klinische Pflegewissenschaft?",
+    answers: [
+        "Praxisorientierung",
+        "Wissenschaftliches Arbeiten",
+        "Patientenzentrierung",
+        "Qualitätsentwicklung"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Die klinische Pflegewissenschaft verbindet wissenschaftliche Erkenntnisse mit einer patientenzentrierten Pflegepraxis."
+},
+
+{
+    id: 494,
+    type: "single",
+    difficulty: "schwer",
+    category: "klinischepflegewissenschaft",
+    question: "Welcher Zusammenhang besteht zwischen klinischer Pflegewissenschaft und Evidence Based Nursing (EBN)?",
+    answers: [
+        "Die klinische Pflegewissenschaft liefert Erkenntnisse, die im Evidence Based Nursing genutzt werden.",
+        "Beide Begriffe haben keinen Zusammenhang.",
+        "EBN ersetzt die klinische Pflegewissenschaft.",
+        "Die klinische Pflegewissenschaft lehnt Forschung ab."
+    ],
+    correct: 0,
+    explanation: "Forschungsergebnisse der klinischen Pflegewissenschaft bilden eine wichtige Grundlage für Evidence Based Nursing."
+},
+
+{
+    id: 495,
+    type: "single",
+    difficulty: "schwer",
+    category: "klinischepflegewissenschaft",
+    question: "Warum ist die klinische Pflegewissenschaft für die Zukunft der Pflege bedeutsam?",
+    answers: [
+        "Sie trägt dazu bei, die Pflege kontinuierlich weiterzuentwickeln und ihre Qualität zu sichern.",
+        "Sie ersetzt die praktische Pflege vollständig.",
+        "Sie beschäftigt sich ausschließlich mit Verwaltung.",
+        "Sie ist nur für Hochschulen relevant."
+    ],
+    correct: 0,
+    explanation: "Die klinische Pflegewissenschaft fördert Innovationen, Qualitätsentwicklung und eine wissenschaftlich fundierte Pflegepraxis."
+},
 ];

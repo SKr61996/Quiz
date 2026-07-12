@@ -3,13 +3,13 @@ function getAllQuestions() {
     return [
 
         ...pflegewissenschaftQuestions,
-        ...diagnostikQuestions,
         ...gesundheitQuestions,
         ...forschungQuestions,
         ...pflegetheorienQuestions,
         ...ebnQuestions,
-        ...professionalisierungQuestions
-
+        ...professionalisierungQuestions,
+        ...metaparadigmaQuestions,
+        ...praeventionQuestions
     ];
 
 }

@@ -11,189 +11,159 @@ document.addEventListener("DOMContentLoaded", () => {
     const pages =
         document.querySelectorAll(".page");
 
-    const buttons =
+    const navigationButtons =
         document.querySelectorAll(".nav-button");
 
-    function showPage(pageId){
+    /* ==========================================
+       Seite anzeigen
+    ========================================== */
 
-        pages.forEach(page=>{
+    function showPage(pageId) {
+
+        pages.forEach(page => {
 
             page.classList.remove("active");
 
         });
 
-        buttons.forEach(button=>{
+        navigationButtons.forEach(button => {
 
             button.classList.remove("active");
 
         });
 
-        const page =
+        const selectedPage =
             document.getElementById(pageId);
 
-        if(page){
+        if (selectedPage) {
 
-            page.classList.add("active");
+            selectedPage.classList.add("active");
 
         }
 
-        const activeButton =
+        const activeNavigationButton =
             document.querySelector(
-
                 `.nav-button[data-page="${pageId}"]`
-
             );
 
-        if(activeButton){
+        if (activeNavigationButton) {
 
-            activeButton.classList.add("active");
+            activeNavigationButton.classList.add("active");
 
         }
 
     }
 
-    buttons.forEach(button=>{
+    /* ==========================================
+       Navigation
+    ========================================== */
+
+    navigationButtons.forEach(button => {
 
         button.addEventListener(
-
             "click",
+            () => {
 
-            ()=>{
-
-                const page=
-
+                const pageId =
                     button.dataset.page;
 
-                showPage(page);
+                showPage(pageId);
+
+                if (
+                    pageId === "lernen" &&
+                    typeof Quiz !== "undefined"
+                ) {
+
+                    Quiz.showLearningSetup();
+
+                }
 
             }
-
         );
 
     });
 
-    /* ==========================
-       Dashboard Buttons
-    ========================== */
+    /* ==========================================
+       Weiterlernen
+    ========================================== */
 
-    const continueLearning =
+    const continueLearningButton =
         document.getElementById(
             "continue-learning"
         );
 
-    if(continueLearning){
+    if (continueLearningButton) {
 
-        continueLearning.addEventListener(
-
+        continueLearningButton.addEventListener(
             "click",
+            () => {
 
-            ()=>{
+                if (
+                    typeof Quiz !== "undefined"
+                ) {
 
-                showPage("lernen");
+                    Quiz.showLearningSetup();
+
+                } else {
+
+                    showPage("lernen");
+
+                }
 
             }
-
         );
 
     }
 
-    const dashboardButton =
+    /* ==========================================
+       Zurück zum Dashboard
+    ========================================== */
+
+    const backDashboardButton =
         document.getElementById(
             "back-dashboard"
         );
 
-    if(dashboardButton){
+    if (backDashboardButton) {
 
-        dashboardButton.addEventListener(
-
+        backDashboardButton.addEventListener(
             "click",
-
-            ()=>{
+            () => {
 
                 showPage("dashboard");
 
             }
-
         );
 
     }
 
-    const restartQuiz =
-        document.getElementById(
-            "restart-quiz"
-        );
+    /* ==========================================
+       Prüfung starten
+    ========================================== */
 
-    if(restartQuiz){
-
-        restartQuiz.addEventListener(
-
-            "click",
-
-            ()=>{
-
-                showPage("lernen");
-
-                if(typeof Quiz!=="undefined"){
-
-                    Quiz.restart();
-
-                }
-
-            }
-
-        );
-
-    }
-
-    const repeatWrong =
-        document.getElementById(
-            "repeat-wrong"
-        );
-
-    if(repeatWrong){
-
-        repeatWrong.addEventListener(
-
-            "click",
-
-            ()=>{
-
-                alert(
-                    "Diese Funktion folgt in Version 1.1."
-                );
-
-            }
-
-        );
-
-    }
-
-    const startExam =
+    const startExamButton =
         document.getElementById(
             "start-exam"
         );
 
-    if(startExam){
+    if (startExamButton) {
 
-        startExam.addEventListener(
-
+        startExamButton.addEventListener(
             "click",
+            () => {
 
-            ()=>{
-
-                showPage("lernen");
-
-                if(typeof Quiz!=="undefined"){
-
-                    Quiz.restart();
-
-                }
+                alert(
+                    "Der Prüfungsmodus wird noch separat eingerichtet."
+                );
 
             }
-
         );
 
     }
+
+    /* ==========================================
+       Startseite
+    ========================================== */
 
     showPage("dashboard");
 

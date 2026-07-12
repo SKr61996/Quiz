@@ -5,12 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>PflegeQuiz</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 </head>
 
@@ -18,9 +23,9 @@
 
 <div class="app">
 
-    <!-- ===========================
+    <!-- ==========================================
          Sidebar
-    ============================ -->
+    =========================================== -->
 
     <aside class="sidebar">
 
@@ -34,681 +39,747 @@
 
         <nav>
 
-            <button class="nav-button active"
-                    data-page="dashboard">
-
+            <button
+                class="nav-button active"
+                data-page="dashboard"
+            >
                 🏠 Dashboard
-
             </button>
 
-            <button class="nav-button"
-                    data-page="lernen">
-
+            <button
+                class="nav-button"
+                data-page="lernen"
+            >
                 📚 Lernen
-
             </button>
 
-            <button class="nav-button"
-                    data-page="pruefung">
-
+            <button
+                class="nav-button"
+                data-page="pruefung"
+            >
                 📝 Prüfung
-
             </button>
 
-            <button class="nav-button"
-                    data-page="statistik">
-
+            <button
+                class="nav-button"
+                data-page="statistik"
+            >
                 📊 Statistik
-
             </button>
 
-            <button class="nav-button"
-                    data-page="favoriten">
-
+            <button
+                class="nav-button"
+                data-page="favoriten"
+            >
                 ⭐ Favoriten
-
             </button>
 
-            <button class="nav-button"
-                    data-page="einstellungen">
-
+            <button
+                class="nav-button"
+                data-page="einstellungen"
+            >
                 ⚙ Einstellungen
-
             </button>
 
         </nav>
 
     </aside>
 
-    <!-- ===========================
+    <!-- ==========================================
          Hauptbereich
-    ============================ -->
+    =========================================== -->
 
     <main class="main-content">
-        <!-- ==========================================
-     Dashboard
-========================================== -->
 
-<section id="dashboard" class="page active">
+        <!-- ======================================
+             Dashboard
+        ======================================= -->
 
-    <h2>Willkommen bei PflegeQuiz 👋</h2>
+        <section
+            id="dashboard"
+            class="page active"
+        >
 
-    <p class="subtitle">
+            <h2>Willkommen bei PflegeQuiz 👋</h2>
 
-        Deine Offline-Lernplattform für das Pflegepädagogikstudium.
+            <p class="subtitle">
+                Deine Offline-Lernplattform für das Pflegepädagogikstudium.
+            </p>
 
-    </p>
+            <div class="dashboard-grid">
 
-    <div class="dashboard-grid">
+                <div class="dashboard-card">
 
-        <div class="dashboard-card">
+                    <h3>📚 Heute gelernt</h3>
 
-            <h3>📚 Heute gelernt</h3>
+                    <span id="dashboard-answered">
+                        0 Fragen
+                    </span>
 
-            <span id="dashboard-answered">
+                </div>
 
-                0 Fragen
+                <div class="dashboard-card">
 
-            </span>
+                    <h3>🎯 Erfolgsquote</h3>
 
-        </div>
+                    <span id="dashboard-percent">
+                        0 %
+                    </span>
 
-        <div class="dashboard-card">
+                </div>
 
-            <h3>🎯 Erfolgsquote</h3>
+                <div class="dashboard-card">
 
-            <span id="dashboard-percent">
+                    <h3>⭐ Favoriten</h3>
 
-                0 %
+                    <span id="dashboard-favorites">
+                        0
+                    </span>
 
-            </span>
+                </div>
 
-        </div>
+                <div class="dashboard-card">
 
-        <div class="dashboard-card">
+                    <h3>❌ Falsche Fragen</h3>
 
-            <h3>⭐ Favoriten</h3>
+                    <span id="dashboard-wrong">
+                        0
+                    </span>
 
-            <span id="dashboard-favorites">
-
-                0
-
-            </span>
-
-        </div>
-
-        <div class="dashboard-card">
-
-            <h3>❌ Falsche Fragen</h3>
-
-            <span id="dashboard-wrong">
-
-                0
-
-            </span>
-
-        </div>
-
-    </div>
-
-    <div class="dashboard-actions">
-
-        <button id="continue-learning">
-
-            ▶ Weiterlernen
-
-        </button>
-
-    </div>
-
-    <h3 class="section-title">
-
-        Module
-
-    </h3>
-
-    <div class="module-grid">
-
-        <div class="module-card">
-
-            🩺 Pflegewissenschaft
-
-        </div>
-
-        <div class="module-card">
-
-            ❤️ Gesundheit
-
-        </div>
-
-        <div class="module-card">
-
-            📖 Forschung
-
-        </div>
-
-        <div class="module-card">
-
-            🧠 Pflegetheorien
-
-        </div>
-
-        <div class="module-card">
-
-            📊 Evidence Based Nursing
-
-        </div>
-
-        <div class="module-card">
-
-            🎓 Professionalisierung
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ==========================================
-<!-- ==========================================
-     Lernen
-========================================== -->
-
-<section id="lernen" class="page">
-
-    <!-- Quiz-Konfiguration -->
-
-    <div id="learning-setup">
-
-        <h2>📚 Lernmodus</h2>
-
-        <p class="subtitle">
-            Stelle deinen persönlichen Quizdurchlauf zusammen.
-        </p>
-
-        <div class="settings-card">
-
-            <h3>Themengebiete</h3>
-
-            <div class="topic-selection">
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Pflegewissenschaft"
-                        checked
-                    >
-                    🩺 Pflegewissenschaft
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Diagnostik"
-                        checked
-                    >
-                    🔎 Diagnostik
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Gesundheit"
-                        checked
-                    >
-                    ❤️ Gesundheit
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Forschung"
-                        checked
-                    >
-                    📖 Forschung
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Pflegetheorien"
-                        checked
-                    >
-                    🧠 Pflegetheorien
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Evidence Based Nursing"
-                        checked
-                    >
-                    📊 Evidence Based Nursing
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-topic"
-                        value="Professionalisierung"
-                        checked
-                    >
-                    🎓 Professionalisierung
-                </label>
+                </div>
 
             </div>
 
-            <h3>Schwierigkeit</h3>
+            <div class="dashboard-actions">
 
-            <div class="difficulty-selection">
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-difficulty"
-                        value="leicht"
-                        checked
-                    >
-                    Leicht
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-difficulty"
-                        value="mittel"
-                        checked
-                    >
-                    Mittel
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="learning-difficulty"
-                        value="schwer"
-                        checked
-                    >
-                    Schwer
-                </label>
-
-            </div>
-
-            <h3>Anzahl der Fragen</h3>
-
-            <select id="learning-question-count">
-
-                <option value="10">
-                    10 Fragen
-                </option>
-
-                <option value="20" selected>
-                    20 Fragen
-                </option>
-
-                <option value="30">
-                    30 Fragen
-                </option>
-
-                <option value="50">
-                    50 Fragen
-                </option>
-
-                <option value="all">
-                    Alle passenden Fragen
-                </option>
-
-            </select>
-
-            <p
-                id="learning-setup-message"
-                class="setup-message hidden"
-            ></p>
-
-            <button id="start-learning">
-
-                ▶ Lernquiz starten
-
-            </button>
-
-        </div>
-
-    </div>
-
-    <!-- Eigentliches Quiz -->
-
-    <div id="learning-quiz" class="hidden">
-
-        <div class="quiz-header">
-
-            <div class="progress-container">
-
-                <div id="progress-fill"></div>
-
-            </div>
-
-            <div id="timer">
-
-                ⏱️ Ohne Zeitlimit
-
-            </div>
-
-        </div>
-
-        <div class="quiz-card">
-
-            <div class="quiz-top">
-
-                <span id="question-counter">
-
-                    Frage 1 von 20
-
-                </span>
-
-                <button id="favorite-button">
-
-                    ☆ Favorit
-
+                <button id="continue-learning">
+                    ▶ Weiterlernen
                 </button>
 
             </div>
 
-            <h2 id="question-text">
+        </section>
 
-                Frage wird geladen...
+        <!-- ======================================
+             Lernen
+        ======================================= -->
 
-            </h2>
+        <section
+            id="lernen"
+            class="page"
+        >
 
-            <div id="answers">
+            <!-- Quiz-Konfiguration -->
 
-                <!-- Antworten werden per JavaScript erzeugt -->
+            <div id="learning-setup">
+
+                <h2>📚 Lernmodus</h2>
+
+                <p class="subtitle">
+                    Stelle deinen persönlichen Quizdurchlauf zusammen.
+                </p>
+
+                <div class="settings-card">
+
+                    <h3>Themengebiete</h3>
+
+                    <div class="topic-selection">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Pflegewissenschaft"
+                                checked
+                            >
+
+                            🩺 Pflegewissenschaft
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Gesundheit"
+                                checked
+                            >
+
+                            ❤️ Gesundheit
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Prävention"
+                                checked
+                            >
+
+                            🛡️ Prävention
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Forschung"
+                                checked
+                            >
+
+                            🔬 Forschung
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Pflegetheorien"
+                                checked
+                            >
+
+                            📚 Pflegetheorien
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Grundlagen der Pflegetheorien"
+                                checked
+                            >
+
+                            📘 Grundlagen der Pflegetheorien
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Metaparadigma"
+                                checked
+                            >
+
+                            🧩 Metaparadigma der Pflege
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Evidence Based Nursing"
+                                checked
+                            >
+
+                            📊 Evidence Based Nursing
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-topic"
+                                value="Professionalisierung"
+                                checked
+                            >
+
+                            🎓 Professionalisierung
+
+                        </label>
+
+                    </div>
+
+                    <h3>Schwierigkeit</h3>
+
+                    <div class="difficulty-selection">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-difficulty"
+                                value="leicht"
+                                checked
+                            >
+
+                            Leicht
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-difficulty"
+                                value="mittel"
+                                checked
+                            >
+
+                            Mittel
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                name="learning-difficulty"
+                                value="schwer"
+                                checked
+                            >
+
+                            Schwer
+
+                        </label>
+
+                    </div>
+
+                    <h3>Anzahl der Fragen</h3>
+
+                    <select id="learning-question-count">
+
+                        <option value="10">
+                            10 Fragen
+                        </option>
+
+                        <option
+                            value="20"
+                            selected
+                        >
+                            20 Fragen
+                        </option>
+
+                        <option value="30">
+                            30 Fragen
+                        </option>
+
+                        <option value="50">
+                            50 Fragen
+                        </option>
+
+                        <option value="all">
+                            Alle passenden Fragen
+                        </option>
+
+                    </select>
+
+                    <p
+                        id="learning-setup-message"
+                        class="setup-message hidden"
+                    ></p>
+
+                    <button id="start-learning">
+                        ▶ Lernquiz starten
+                    </button>
+
+                </div>
 
             </div>
 
-            <div class="quiz-buttons">
+            <!-- Eigentliches Quiz -->
 
-                <button id="previous-question">
+            <div
+                id="learning-quiz"
+                class="hidden"
+            >
 
-                    ← Zurück
+                <div class="quiz-header">
 
-                </button>
+                    <div class="progress-container">
 
-                <button id="next-question" disabled>
+                        <div id="progress-fill"></div>
 
-                    Weiter →
+                    </div>
 
+                    <div id="timer">
+                        ⏱️ Ohne Zeitlimit
+                    </div>
+
+                </div>
+
+                <div class="quiz-card">
+
+                    <div class="quiz-top">
+
+                        <span id="question-counter">
+                            Frage 1 von 20
+                        </span>
+
+                        <button id="favorite-button">
+                            ☆ Favorit
+                        </button>
+
+                    </div>
+
+                    <h2 id="question-text">
+                        Frage wird geladen...
+                    </h2>
+
+                    <div id="answers">
+
+                        <!-- Antworten werden per JavaScript erzeugt -->
+
+                    </div>
+
+                    <div class="quiz-buttons">
+
+                        <button id="previous-question">
+                            ← Zurück
+                        </button>
+
+                        <button
+                            id="next-question"
+                            disabled
+                        >
+                            Weiter →
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="feedback"
+                    class="feedback hidden"
+                >
+
+                    <h3 id="feedback-title"></h3>
+
+                    <p id="feedback-text"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================
+             Prüfung
+        ======================================= -->
+
+        <section
+            id="pruefung"
+            class="page"
+        >
+
+            <h2>📝 Prüfungsmodus</h2>
+
+            <div class="settings-card">
+
+                <h3>Module</h3>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Pflegewissenschaft
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Gesundheit
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Prävention
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Forschung
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Pflegetheorien
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Metaparadigma
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Evidence Based Nursing
+                </label>
+
+                <label>
+                    <input type="checkbox" checked>
+                    Professionalisierung
+                </label>
+
+                <h3>Anzahl Fragen</h3>
+
+                <select id="exam-question-count">
+
+                    <option value="20">
+                        20 Fragen
+                    </option>
+
+                    <option value="50">
+                        50 Fragen
+                    </option>
+
+                    <option value="100">
+                        100 Fragen
+                    </option>
+
+                    <option value="all">
+                        Alle Fragen
+                    </option>
+
+                </select>
+
+                <h3>Timer</h3>
+
+                <select id="exam-timer">
+
+                    <option value="0">
+                        Kein Timer
+                    </option>
+
+                    <option value="60">
+                        60 Sekunden
+                    </option>
+
+                    <option value="90">
+                        90 Sekunden
+                    </option>
+
+                    <option value="120">
+                        120 Sekunden
+                    </option>
+
+                </select>
+
+                <button id="start-exam">
+                    ▶ Prüfung starten
                 </button>
 
             </div>
 
-        </div>
+        </section>
 
-        <div id="feedback" class="feedback hidden">
+        <!-- ======================================
+             Statistik
+        ======================================= -->
 
-            <h3 id="feedback-title"></h3>
+        <section
+            id="statistik"
+            class="page"
+        >
 
-            <p id="feedback-text"></p>
+            <h2>📊 Statistik</h2>
 
-        </div>
+            <div class="dashboard-grid">
 
-    </div>
+                <div class="dashboard-card">
 
-</section>
-<!-- ==========================================
-     Prüfung
-========================================== -->
+                    <h3>Beantwortet</h3>
 
-<section id="pruefung" class="page">
+                    <span id="stats-answered">
+                        0
+                    </span>
 
-    <h2>📝 Prüfungsmodus</h2>
+                </div>
 
-    <div class="settings-card">
+                <div class="dashboard-card">
 
-        <h3>Module</h3>
+                    <h3>Richtig</h3>
 
-        <label><input type="checkbox" checked> Pflegewissenschaft</label>
-        <label><input type="checkbox" checked> Gesundheit</label>
-        <label><input type="checkbox" checked> Forschung</label>
-        <label><input type="checkbox" checked> Pflegetheorien</label>
-        <label><input type="checkbox" checked> Evidence Based Nursing</label>
+                    <span id="stats-correct">
+                        0
+                    </span>
 
-        <h3>Anzahl Fragen</h3>
+                </div>
 
-        <select id="exam-question-count">
+                <div class="dashboard-card">
 
-            <option value="20">20 Fragen</option>
-            <option value="50">50 Fragen</option>
-            <option value="100">100 Fragen</option>
-            <option value="all">Alle Fragen</option>
+                    <h3>Erfolgsquote</h3>
 
-        </select>
+                    <span id="stats-percent">
+                        0 %
+                    </span>
 
-        <h3>Timer</h3>
+                </div>
 
-        <select id="exam-timer">
+                <div class="dashboard-card">
 
-            <option value="0">Kein Timer</option>
-            <option value="60">60 Sekunden</option>
-            <option value="90">90 Sekunden</option>
-            <option value="120">120 Sekunden</option>
+                    <h3>Favoriten</h3>
 
-        </select>
+                    <span id="stats-favorites">
+                        0
+                    </span>
 
-        <button id="start-exam">
+                </div>
 
-            ▶ Prüfung starten
+            </div>
 
-        </button>
+        </section>
 
-    </div>
+        <!-- ======================================
+             Favoriten
+        ======================================= -->
 
-</section>
+        <section
+            id="favoriten"
+            class="page"
+        >
 
-<!-- ==========================================
-     Statistik
-========================================== -->
+            <h2>⭐ Favoriten</h2>
 
-<section id="statistik" class="page">
+            <div id="favorite-list">
 
-    <h2>📊 Statistik</h2>
+                <p>
+                    Noch keine Favoriten gespeichert.
+                </p>
 
-    <div class="dashboard-grid">
+            </div>
 
-        <div class="dashboard-card">
+        </section>
 
-            <h3>Beantwortet</h3>
+        <!-- ======================================
+             Einstellungen
+        ======================================= -->
 
-            <span id="stats-answered">
+        <section
+            id="einstellungen"
+            class="page"
+        >
 
-                0
+            <h2>⚙ Einstellungen</h2>
 
-            </span>
+            <div class="settings-card">
 
-        </div>
+                <label>
 
-        <div class="dashboard-card">
+                    <input
+                        type="checkbox"
+                        id="shuffle-questions"
+                        checked
+                    >
 
-            <h3>Richtig</h3>
+                    Fragen zufällig mischen
 
-            <span id="stats-correct">
+                </label>
 
-                0
+                <label>
 
-            </span>
+                    <input
+                        type="checkbox"
+                        id="shuffle-answers"
+                        checked
+                    >
 
-        </div>
+                    Antworten zufällig mischen
 
-        <div class="dashboard-card">
+                </label>
 
-            <h3>Erfolgsquote</h3>
+                <label>
 
-            <span id="stats-percent">
+                    <input
+                        type="checkbox"
+                        id="dark-mode"
+                    >
 
-                0 %
+                    Dark Mode
 
-            </span>
+                </label>
 
-        </div>
+            </div>
 
-        <div class="dashboard-card">
+        </section>
 
-            <h3>Favoriten</h3>
+        <!-- ======================================
+             Ergebnisse
+        ======================================= -->
 
-            <span id="stats-favorites">
+        <section
+            id="result-page"
+            class="page"
+        >
 
-                0
+            <h2>🏆 Quiz abgeschlossen</h2>
 
-            </span>
+            <div class="result-card">
 
-        </div>
+                <h1 id="result-percent">
+                    0 %
+                </h1>
 
-    </div>
+                <h2 id="result-grade">
+                    Note -
+                </h2>
 
-</section>
+                <p id="result-score">
+                    0 von 0 richtig
+                </p>
 
-<!-- ==========================================
-     Favoriten
-========================================== -->
+                <h3 id="result-status">
+                    Nicht bestanden
+                </h3>
 
-<section id="favoriten" class="page">
+                <div class="result-buttons">
 
-    <h2>⭐ Favoriten</h2>
+                    <button id="restart-quiz">
+                        🔄 Quiz neu starten
+                    </button>
 
-    <div id="favorite-list">
+                    <button id="repeat-wrong">
+                        ❌ Falsche Fragen wiederholen
+                    </button>
 
-        <p>
+                    <button id="back-dashboard">
+                        🏠 Dashboard
+                    </button>
 
-            Noch keine Favoriten gespeichert.
+                </div>
 
-        </p>
+            </div>
 
-    </div>
+        </section>
 
-</section>
-<!-- ==========================================
-     Einstellungen
-========================================== -->
-
-<section id="einstellungen" class="page">
-
-    <h2>⚙ Einstellungen</h2>
-
-    <div class="settings-card">
-
-        <label>
-
-            <input type="checkbox" id="shuffle-questions" checked>
-
-            Fragen zufällig mischen
-
-        </label>
-
-        <label>
-
-            <input type="checkbox" id="shuffle-answers" checked>
-
-            Antworten zufällig mischen
-
-        </label>
-
-        <label>
-
-            <input type="checkbox" id="dark-mode">
-
-            Dark Mode
-
-        </label>
-
-    </div>
-
-</section>
-
-<!-- ==========================================
-     Ergebnisse
-========================================== -->
-
-<section id="result-page" class="page">
-
-    <h2>🏆 Prüfung abgeschlossen</h2>
-
-    <div class="result-card">
-
-        <h1 id="result-percent">
-
-            0 %
-
-        </h1>
-
-        <h2 id="result-grade">
-
-            Note -
-
-        </h2>
-
-        <p id="result-score">
-
-            0 von 0 richtig
-
-        </p>
-
-        <h3 id="result-status">
-
-            Nicht bestanden
-
-        </h3>
-
-        <div class="result-buttons">
-
-            <button id="restart-quiz">
-
-                🔄 Quiz neu starten
-
-            </button>
-
-            <button id="repeat-wrong">
-
-                ❌ Falsche Fragen wiederholen
-
-            </button>
-
-            <button id="back-dashboard">
-
-                🏠 Dashboard
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
+    </main>
 
 </div>
 
 <!-- ==========================================
-     JavaScript
-========================================== -->
+     Fragendateien
+=========================================== -->
 
-<script src="questions/diagnostik.js"></script>
 <script src="questions/pflegewissenschaft.js"></script>
 <script src="questions/gesundheit.js"></script>
 <script src="questions/forschung.js"></script>
 <script src="questions/pflegetheorien.js"></script>
 <script src="questions/ebn.js"></script>
 <script src="questions/professionalisierung.js"></script>
-
+<script src="questions/metaparadigma.js"></script>
+<script src="questions/praevention.js"></script>
 <script src="questions/index.js"></script>
+
+<!-- ==========================================
+     Haupt-JavaScript
+=========================================== -->
 
 <script src="js/storage.js"></script>
 <script src="js/quiz.js"></script>
 <script src="js/script.js"></script>
 
 </body>
+
 </html>

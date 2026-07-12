@@ -1812,5 +1812,960 @@ const pflegetheorienQuestions = [
 
     explanation:
         "Sehr allgemeine Modelle können zwar Orientierung geben, bieten jedoch möglicherweise zu wenig konkrete Unterstützung für einzelne Pflegesituationen."
+},
+{
+    id: 446,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Was versteht Afaf Meleis unter einer Transition?",
+    answers: [
+        "Einen Übergangsprozess zwischen unterschiedlichen Lebensphasen, Rollen oder Gesundheitszuständen",
+        "Eine ausschließlich körperliche Veränderung",
+        "Den Wechsel zwischen zwei Pflegeeinrichtungen",
+        "Die Entwicklung einer Pflegediagnose"
+    ],
+    correct: 0,
+    explanation: "Meleis beschreibt eine Transition als einen Übergangsprozess, der Veränderungen im Leben eines Menschen mit sich bringt."
+},
+
+{
+    id: 447,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Welches Ziel verfolgt die Transitionstheorie nach Meleis?",
+    answers: [
+        "Menschen während Übergängen zu verstehen und professionell zu begleiten",
+        "Pflegepersonal wirtschaftlicher einzusetzen",
+        "Krankheiten zu diagnostizieren",
+        "Pflegeprozesse zu dokumentieren"
+    ],
+    correct: 0,
+    explanation: "Die Theorie unterstützt Pflegefachpersonen dabei, Menschen in Übergangssituationen zu begleiten."
+},
+
+{
+    id: 448,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Wer entwickelte die Transitionstheorie?",
+    answers: [
+        "Afaf Ibrahim Meleis",
+        "Dorothea Orem",
+        "Virginia Henderson",
+        "Sister Callista Roy"
+    ],
+    correct: 0,
+    explanation: "Die Transitionstheorie wurde von Afaf Ibrahim Meleis entwickelt."
+},
+
+{
+    id: 449,
+    type: "multiple",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Welche Arten von Transitionen beschreibt Meleis?",
+    answers: [
+        "Entwicklungsbezogene Transitionen",
+        "Situative Transitionen",
+        "Gesundheits- und krankheitsbezogene Transitionen",
+        "Organisationale Transitionen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Meleis unterscheidet vier Arten von Transitionen."
+},
+
+{
+    id: 450,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine entwicklungsbezogene Transition?",
+    answers: [
+        "Der Übergang zur Elternschaft",
+        "Ein Krankenhauswechsel",
+        "Eine Operation",
+        "Ein Arbeitsplatzwechsel innerhalb einer Station"
+    ],
+    correct: 0,
+    explanation: "Die Elternschaft ist ein typisches Beispiel einer entwicklungsbezogenen Transition."
+},
+
+{
+    id: 451,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine situative Transition?",
+    answers: [
+        "Der Eintritt in den Ruhestand",
+        "Die Pubertät",
+        "Eine Tumorerkrankung",
+        "Die Geburt eines Kindes"
+    ],
+    correct: 0,
+    explanation: "Der Eintritt in den Ruhestand verändert die soziale Rolle und ist eine situative Transition."
+},
+
+{
+    id: 452,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine gesundheits- und krankheitsbezogene Transition?",
+    answers: [
+        "Die Diagnose eines Diabetes mellitus",
+        "Der Schulabschluss",
+        "Ein Umzug",
+        "Die Hochzeit"
+    ],
+    correct: 0,
+    explanation: "Eine neue Diagnose verändert den Gesundheitszustand und stellt eine gesundheitsbezogene Transition dar."
+},
+
+{
+    id: 453,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine organisationale Transition?",
+    answers: [
+        "Die Einführung eines neuen Dokumentationssystems im Krankenhaus",
+        "Die Geburt eines Kindes",
+        "Die Menopause",
+        "Eine Krebsdiagnose"
+    ],
+    correct: 0,
+    explanation: "Organisationale Transitionen entstehen durch Veränderungen innerhalb von Organisationen oder Gesundheitssystemen."
+},
+
+{
+    id: 454,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welche Merkmale kennzeichnen eine Transition?",
+    answers: [
+        "Veränderung",
+        "Anpassung",
+        "Entwicklung",
+        "Lernen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Transitionen sind durch Veränderungs-, Anpassungs- und Lernprozesse gekennzeichnet."
+},
+
+{
+    id: 455,
+    type: "single",
+    difficulty: "schwer",
+    category: "meleis",
+    question: "Welche Rolle übernehmen Pflegefachpersonen nach Meleis während einer Transition?",
+    answers: [
+        "Sie unterstützen Menschen professionell beim Bewältigen von Übergängen.",
+        "Sie beobachten ausschließlich den Gesundheitszustand.",
+        "Sie übernehmen alle Entscheidungen für die Betroffenen.",
+        "Sie greifen nur bei medizinischen Problemen ein."
+    ],
+    correct: 0,
+    explanation: "Pflegefachpersonen begleiten, beraten und unterstützen Menschen dabei, Transitionen erfolgreich zu bewältigen."
+},
+{
+    id: 446,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Was versteht Afaf Meleis unter einer Transition?",
+    answers: [
+        "Einen Übergangsprozess zwischen unterschiedlichen Lebensphasen, Rollen oder Gesundheitszuständen",
+        "Eine ausschließlich körperliche Veränderung",
+        "Den Wechsel zwischen zwei Pflegeeinrichtungen",
+        "Die Entwicklung einer Pflegediagnose"
+    ],
+    correct: 0,
+    explanation: "Meleis beschreibt eine Transition als einen Übergangsprozess, der Veränderungen im Leben eines Menschen mit sich bringt."
+},
+
+{
+    id: 447,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Welches Ziel verfolgt die Transitionstheorie nach Meleis?",
+    answers: [
+        "Menschen während Übergängen zu verstehen und professionell zu begleiten",
+        "Pflegepersonal wirtschaftlicher einzusetzen",
+        "Krankheiten zu diagnostizieren",
+        "Pflegeprozesse zu dokumentieren"
+    ],
+    correct: 0,
+    explanation: "Die Theorie unterstützt Pflegefachpersonen dabei, Menschen in Übergangssituationen zu begleiten."
+},
+
+{
+    id: 448,
+    type: "single",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Wer entwickelte die Transitionstheorie?",
+    answers: [
+        "Afaf Ibrahim Meleis",
+        "Dorothea Orem",
+        "Virginia Henderson",
+        "Sister Callista Roy"
+    ],
+    correct: 0,
+    explanation: "Die Transitionstheorie wurde von Afaf Ibrahim Meleis entwickelt."
+},
+
+{
+    id: 449,
+    type: "multiple",
+    difficulty: "leicht",
+    category: "meleis",
+    question: "Welche Arten von Transitionen beschreibt Meleis?",
+    answers: [
+        "Entwicklungsbezogene Transitionen",
+        "Situative Transitionen",
+        "Gesundheits- und krankheitsbezogene Transitionen",
+        "Organisationale Transitionen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Meleis unterscheidet vier Arten von Transitionen."
+},
+
+{
+    id: 450,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine entwicklungsbezogene Transition?",
+    answers: [
+        "Der Übergang zur Elternschaft",
+        "Ein Krankenhauswechsel",
+        "Eine Operation",
+        "Ein Arbeitsplatzwechsel innerhalb einer Station"
+    ],
+    correct: 0,
+    explanation: "Die Elternschaft ist ein typisches Beispiel einer entwicklungsbezogenen Transition."
+},
+
+{
+    id: 451,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine situative Transition?",
+    answers: [
+        "Der Eintritt in den Ruhestand",
+        "Die Pubertät",
+        "Eine Tumorerkrankung",
+        "Die Geburt eines Kindes"
+    ],
+    correct: 0,
+    explanation: "Der Eintritt in den Ruhestand verändert die soziale Rolle und ist eine situative Transition."
+},
+
+{
+    id: 452,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine gesundheits- und krankheitsbezogene Transition?",
+    answers: [
+        "Die Diagnose eines Diabetes mellitus",
+        "Der Schulabschluss",
+        "Ein Umzug",
+        "Die Hochzeit"
+    ],
+    correct: 0,
+    explanation: "Eine neue Diagnose verändert den Gesundheitszustand und stellt eine gesundheitsbezogene Transition dar."
+},
+
+{
+    id: 453,
+    type: "single",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welches Beispiel beschreibt eine organisationale Transition?",
+    answers: [
+        "Die Einführung eines neuen Dokumentationssystems im Krankenhaus",
+        "Die Geburt eines Kindes",
+        "Die Menopause",
+        "Eine Krebsdiagnose"
+    ],
+    correct: 0,
+    explanation: "Organisationale Transitionen entstehen durch Veränderungen innerhalb von Organisationen oder Gesundheitssystemen."
+},
+
+{
+    id: 454,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "meleis",
+    question: "Welche Merkmale kennzeichnen eine Transition?",
+    answers: [
+        "Veränderung",
+        "Anpassung",
+        "Entwicklung",
+        "Lernen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Transitionen sind durch Veränderungs-, Anpassungs- und Lernprozesse gekennzeichnet."
+},
+
+{
+    id: 455,
+    type: "single",
+    difficulty: "schwer",
+    category: "meleis",
+    question: "Welche Rolle übernehmen Pflegefachpersonen nach Meleis während einer Transition?",
+    answers: [
+        "Sie unterstützen Menschen professionell beim Bewältigen von Übergängen.",
+        "Sie beobachten ausschließlich den Gesundheitszustand.",
+        "Sie übernehmen alle Entscheidungen für die Betroffenen.",
+        "Sie greifen nur bei medizinischen Problemen ein."
+    ],
+    correct: 0,
+    explanation: "Pflegefachpersonen begleiten, beraten und unterstützen Menschen dabei, Transitionen erfolgreich zu bewältigen."
+},
+{
+    id: 496,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Nach welchen Kriterien können Pflegetheorien eingeteilt werden?",
+    answers: [
+        "Nach Reichweite, Abstraktionsgrad, Zweck und Entwicklungsstand",
+        "Nur nach ihrem Erscheinungsjahr",
+        "Nur nach dem Herkunftsland",
+        "Nur nach der Anzahl der Konzepte"
+    ],
+    correct: 0,
+    explanation: "Pflegetheorien können unter anderem nach Reichweite, Abstraktionsgrad, Zweck und Entwicklungsstand eingeteilt werden."
+},
+
+{
+    id: 497,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Was beschreibt der Abstraktionsgrad einer Pflegetheorie?",
+    answers: [
+        "Wie allgemein oder konkret eine Theorie formuliert ist",
+        "Wie alt eine Theorie ist",
+        "Wie viele Autorinnen und Autoren beteiligt waren",
+        "Wie häufig sie angewendet wird"
+    ],
+    correct: 0,
+    explanation: "Der Abstraktionsgrad gibt an, wie allgemein oder konkret eine Theorie formuliert wurde."
+},
+
+{
+    id: 498,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Welche Theorie besitzt den höchsten Abstraktionsgrad?",
+    answers: [
+        "Grand Theory",
+        "Middle-Range Theory",
+        "Practice Theory",
+        "Situation Theory"
+    ],
+    correct: 0,
+    explanation: "Grand Theories sind sehr allgemein formuliert und besitzen den höchsten Abstraktionsgrad."
+},
+
+{
+    id: 499,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Welche Theorie besitzt den geringsten Abstraktionsgrad?",
+    answers: [
+        "Practice Theory",
+        "Grand Theory",
+        "Middle-Range Theory",
+        "Metatheorie"
+    ],
+    correct: 0,
+    explanation: "Practice Theories beziehen sich auf konkrete pflegerische Situationen."
+},
+
+{
+    id: 500,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Wodurch zeichnet sich eine Grand Theory aus?",
+    answers: [
+        "Sie beschreibt Pflegephänomene sehr allgemein.",
+        "Sie bezieht sich ausschließlich auf einzelne Pflegesituationen.",
+        "Sie enthält nur pflegerische Interventionen.",
+        "Sie beschreibt ausschließlich medizinische Diagnosen."
+    ],
+    correct: 0,
+    explanation: "Grand Theories sind umfassend und abstrakt formuliert."
+},
+
+{
+    id: 501,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Wodurch zeichnet sich eine Middle-Range Theory aus?",
+    answers: [
+        "Sie beschreibt konkrete Pflegephänomene mit mittlerem Abstraktionsgrad.",
+        "Sie ist allgemeiner als eine Grand Theory.",
+        "Sie beschäftigt sich nur mit Pflegediagnosen.",
+        "Sie kann ausschließlich in der Forschung genutzt werden."
+    ],
+    correct: 0,
+    explanation: "Middle-Range Theories sind konkreter als Grand Theories und gut auf die Praxis übertragbar."
+},
+
+{
+    id: 502,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Wodurch zeichnet sich eine Practice Theory aus?",
+    answers: [
+        "Sie beschreibt konkrete Handlungsempfehlungen für bestimmte Pflegesituationen.",
+        "Sie ist die allgemeinste Form einer Theorie.",
+        "Sie enthält ausschließlich Definitionen.",
+        "Sie dient nur der Lehre."
+    ],
+    correct: 0,
+    explanation: "Practice Theories beziehen sich unmittelbar auf konkrete pflegerische Situationen."
+},
+
+{
+    id: 503,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Theorien gehören zur Einteilung nach dem Abstraktionsgrad?",
+    answers: [
+        "Grand Theory",
+        "Middle-Range Theory",
+        "Practice Theory",
+        "Situation Theory"
+    ],
+    correct: [0,1,2],
+    explanation: "Die klassische Einteilung erfolgt in Grand-, Middle-Range- und Practice-Theories."
+},
+
+{
+    id: 504,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Theorie lässt sich am unmittelbarsten in der Pflegepraxis anwenden?",
+    answers: [
+        "Practice Theory",
+        "Grand Theory",
+        "Metatheorie",
+        "Middle-Range Theory"
+    ],
+    correct: 0,
+    explanation: "Practice Theories liefern konkrete Handlungsempfehlungen für die Praxis."
+},
+
+{
+    id: 505,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen zu Grand Theories treffen zu?",
+    answers: [
+        "Sie besitzen einen hohen Abstraktionsgrad.",
+        "Sie beschreiben Pflege umfassend.",
+        "Sie sind schwieriger unmittelbar in der Praxis anzuwenden.",
+        "Sie enthalten ausschließlich konkrete Pflegeinterventionen."
+    ],
+    correct: [0,1,2],
+    explanation: "Grand Theories sind umfassend und abstrakt, jedoch weniger direkt auf konkrete Situationen anwendbar."
+},
+
+{
+    id: 506,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen zu Middle-Range Theories treffen zu?",
+    answers: [
+        "Sie besitzen einen mittleren Abstraktionsgrad.",
+        "Sie beziehen sich auf konkrete Pflegephänomene.",
+        "Sie lassen sich gut empirisch überprüfen.",
+        "Sie sind allgemeiner als Grand Theories."
+    ],
+    correct: [0,1,2],
+    explanation: "Middle-Range Theories verbinden Theorie und Praxis und eignen sich gut für Forschung und Anwendung."
+},
+
+{
+    id: 507,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussage beschreibt den Zusammenhang zwischen Abstraktionsgrad und Praxisnähe?",
+    answers: [
+        "Je höher der Abstraktionsgrad, desto geringer ist meist die unmittelbare Praxisnähe.",
+        "Je höher der Abstraktionsgrad, desto praxisnäher ist die Theorie.",
+        "Zwischen beiden besteht kein Zusammenhang.",
+        "Nur Practice Theories besitzen einen Abstraktionsgrad."
+    ],
+    correct: 0,
+    explanation: "Mit zunehmendem Abstraktionsgrad nimmt die direkte Anwendbarkeit in der Praxis meist ab."
+},
+
+{
+    id: 508,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Warum werden Pflegetheorien eingeteilt?",
+    answers: [
+        "Um ihre Aussagekraft, Anwendbarkeit und ihren Zweck besser einordnen zu können.",
+        "Um ältere Theorien auszusortieren.",
+        "Um Theorien nach Autorinnen zu ordnen.",
+        "Um ausschließlich Forschung zu betreiben."
+    ],
+    correct: 0,
+    explanation: "Die Einteilung erleichtert das Verständnis und die gezielte Anwendung verschiedener Theorien."
+},
+
+{
+    id: 509,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Kriterien können zur Einteilung von Pflegetheorien herangezogen werden?",
+    answers: [
+        "Reichweite",
+        "Abstraktionsgrad",
+        "Zweck",
+        "Entwicklungsstand"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Pflegetheorien lassen sich anhand verschiedener Kriterien systematisch einteilen."
+},
+
+{
+    id: 510,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Reihenfolge der Theorien nach zunehmender Praxisnähe ist korrekt?",
+    answers: [
+        "Grand Theory → Middle-Range Theory → Practice Theory",
+        "Practice Theory → Grand Theory → Middle-Range Theory",
+        "Middle-Range Theory → Grand Theory → Practice Theory",
+        "Practice Theory → Middle-Range Theory → Grand Theory"
+    ],
+    correct: 0,
+    explanation: "Mit sinkendem Abstraktionsgrad steigt die Praxisnähe: Grand Theory → Middle-Range Theory → Practice Theory."
+},
+{
+    id: 511,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Was beschreibt der Abstraktionsgrad einer Pflegetheorie?",
+    answers: [
+        "Den Grad der Allgemeingültigkeit einer Theorie",
+        "Die Anzahl der Autorinnen und Autoren",
+        "Das Alter einer Theorie",
+        "Die Anzahl der enthaltenen Pflegediagnosen"
+    ],
+    correct: 0,
+    explanation: "Der Abstraktionsgrad beschreibt, wie allgemein oder konkret eine Theorie formuliert ist."
+},
+
+{
+    id: 512,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Aussage trifft auf Theorien mit hohem Abstraktionsgrad zu?",
+    answers: [
+        "Sie sind allgemein formuliert und auf viele Situationen anwendbar.",
+        "Sie beschreiben ausschließlich konkrete Pflegemaßnahmen.",
+        "Sie besitzen eine geringe Reichweite.",
+        "Sie beziehen sich nur auf einzelne Patientengruppen."
+    ],
+    correct: 0,
+    explanation: "Theorien mit hohem Abstraktionsgrad sind allgemein formuliert und auf viele Situationen übertragbar."
+},
+
+{
+    id: 513,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Aussage trifft auf Theorien mit niedrigem Abstraktionsgrad zu?",
+    answers: [
+        "Sie eignen sich besonders für konkrete Pflegesituationen.",
+        "Sie beschreiben ausschließlich das Metaparadigma.",
+        "Sie besitzen die größte Reichweite.",
+        "Sie sind nicht wissenschaftlich überprüfbar."
+    ],
+    correct: 0,
+    explanation: "Je geringer der Abstraktionsgrad, desto konkreter und praxisnäher ist die Theorie."
+},
+
+{
+    id: 514,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Vorteile besitzen Grand Theories?",
+    answers: [
+        "Sie bieten eine umfassende Sicht auf Pflege.",
+        "Sie bilden die Grundlage weiterer Theorien.",
+        "Sie strukturieren pflegerisches Denken.",
+        "Sie enthalten detaillierte Handlungsanweisungen."
+    ],
+    correct: [0,1,2],
+    explanation: "Grand Theories bieten einen umfassenden theoretischen Rahmen, jedoch keine konkreten Handlungsschritte."
+},
+
+{
+    id: 515,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Warum werden Middle-Range-Theorien häufig in der Pflegeforschung verwendet?",
+    answers: [
+        "Sie lassen sich gut empirisch überprüfen.",
+        "Sie sind ausschließlich theoretisch.",
+        "Sie besitzen den höchsten Abstraktionsgrad.",
+        "Sie enthalten keine überprüfbaren Aussagen."
+    ],
+    correct: 0,
+    explanation: "Middle-Range-Theorien sind ausreichend konkret, um wissenschaftlich untersucht zu werden."
+},
+
+{
+    id: 516,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Theorie eignet sich am besten zur Entwicklung konkreter Pflegeinterventionen?",
+    answers: [
+        "Practice Theory",
+        "Grand Theory",
+        "Metatheorie",
+        "Middle-Range Theory"
+    ],
+    correct: 0,
+    explanation: "Practice Theories beziehen sich unmittelbar auf konkrete Pflegesituationen."
+},
+
+{
+    id: 517,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen zum Zusammenhang zwischen Abstraktionsgrad und Praxisnähe treffen zu?",
+    answers: [
+        "Mit sinkendem Abstraktionsgrad steigt die Praxisnähe.",
+        "Practice Theories sind praxisnäher als Grand Theories.",
+        "Grand Theories besitzen meist eine größere Reichweite.",
+        "Middle-Range-Theorien liegen zwischen Grand und Practice Theories."
+    ],
+    correct: [0,1,2,3],
+    explanation: "Die drei Theorieebenen unterscheiden sich hinsichtlich Allgemeingültigkeit und Praxisnähe."
+},
+
+{
+    id: 518,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussage beschreibt den Nutzen verschiedener Abstraktionsgrade am besten?",
+    answers: [
+        "Je nach Fragestellung eignen sich unterschiedliche Theorieebenen.",
+        "Practice Theories ersetzen alle anderen Theorien.",
+        "Nur Grand Theories sind wissenschaftlich relevant.",
+        "Der Abstraktionsgrad hat keinen Einfluss auf die Anwendbarkeit."
+    ],
+    correct: 0,
+    explanation: "Jede Theorieebene erfüllt einen eigenen Zweck und ergänzt die anderen."
+},
+
+{
+    id: 519,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen zu Practice Theories treffen zu?",
+    answers: [
+        "Sie besitzen einen geringen Abstraktionsgrad.",
+        "Sie liefern konkrete Handlungsempfehlungen.",
+        "Sie beziehen sich häufig auf spezielle Pflegesituationen.",
+        "Sie besitzen die größte Reichweite aller Theorieformen."
+    ],
+    correct: [0,1,2],
+    explanation: "Practice Theories sind konkret, praxisnah und auf bestimmte Situationen ausgerichtet."
+},
+
+{
+    id: 520,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Warum existieren unterschiedliche Abstraktionsgrade in der Pflegewissenschaft?",
+    answers: [
+        "Weil unterschiedliche Fragestellungen unterschiedliche Theorieebenen erfordern.",
+        "Weil ältere Theorien weniger abstrakt sind.",
+        "Weil nur Grand Theories wissenschaftlich anerkannt sind.",
+        "Weil Practice Theories keine wissenschaftlichen Theorien darstellen."
+    ],
+    correct: 0,
+    explanation: "Unterschiedliche Theorieebenen ermöglichen sowohl allgemeine Erklärungen als auch konkrete Handlungsempfehlungen."
+},
+{
+    id: 531,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Was versteht man in der Pflegewissenschaft unter einem Konzept?",
+    answers: [
+        "Einen Begriff oder eine Vorstellung, die ein Phänomen beschreibt",
+        "Eine vollständige wissenschaftliche Theorie",
+        "Eine Pflegediagnose",
+        "Eine wissenschaftliche Studie"
+    ],
+    correct: 0,
+    explanation: "Konzepte beschreiben einzelne Phänomene oder Begriffe und bilden die Grundlage wissenschaftlicher Theorien."
+},
+
+{
+    id: 532,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Was ist eine Theorie?",
+    answers: [
+        "Ein System zusammenhängender Konzepte zur Beschreibung, Erklärung oder Vorhersage von Phänomenen",
+        "Eine einzelne Definition",
+        "Eine Pflegemaßnahme",
+        "Eine wissenschaftliche Hypothese"
+    ],
+    correct: 0,
+    explanation: "Theorien bestehen aus mehreren Konzepten, die logisch miteinander verknüpft sind."
+},
+
+{
+    id: 533,
+    type: "single",
+    difficulty: "leicht",
+    category: "grundlagen",
+    question: "Welcher Zusammenhang besteht zwischen Konzepten und Theorien?",
+    answers: [
+        "Konzepte bilden die Bausteine einer Theorie.",
+        "Theorien bestehen ausschließlich aus Definitionen.",
+        "Konzepte ersetzen Theorien.",
+        "Zwischen Konzepten und Theorien besteht kein Zusammenhang."
+    ],
+    correct: 0,
+    explanation: "Theorien setzen sich aus mehreren miteinander verbundenen Konzepten zusammen."
+},
+
+{
+    id: 534,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Aussagen zu Konzepten treffen zu?",
+    answers: [
+        "Sie beschreiben einzelne Phänomene.",
+        "Sie bilden die Grundlage von Theorien.",
+        "Sie können abstrakt oder konkret sein.",
+        "Sie erklären allein vollständige Pflegephänomene."
+    ],
+    correct: [0,1,2],
+    explanation: "Einzelne Konzepte beschreiben Aspekte eines Phänomens. Erst ihr Zusammenhang bildet eine Theorie."
+},
+
+{
+    id: 535,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Aufgabe haben Konzepte innerhalb einer Theorie?",
+    answers: [
+        "Sie strukturieren und beschreiben zentrale Inhalte der Theorie.",
+        "Sie ersetzen empirische Forschung.",
+        "Sie dienen ausschließlich der Dokumentation.",
+        "Sie beschreiben nur pflegerische Interventionen."
+    ],
+    correct: 0,
+    explanation: "Konzepte sind die zentralen Bestandteile einer Theorie und strukturieren deren Aussagen."
+},
+
+{
+    id: 536,
+    type: "single",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Warum sind Konzepte für die Pflegewissenschaft wichtig?",
+    answers: [
+        "Sie schaffen eine gemeinsame wissenschaftliche Sprache.",
+        "Sie ersetzen Pflegestandards.",
+        "Sie dienen ausschließlich der Ausbildung.",
+        "Sie beschreiben ausschließlich Krankheiten."
+    ],
+    correct: 0,
+    explanation: "Konzepte ermöglichen eine einheitliche Beschreibung und Kommunikation pflegewissenschaftlicher Inhalte."
+},
+
+{
+    id: 537,
+    type: "multiple",
+    difficulty: "mittel",
+    category: "grundlagen",
+    question: "Welche Merkmale kennzeichnen wissenschaftliche Theorien?",
+    answers: [
+        "Sie bestehen aus miteinander verbundenen Konzepten.",
+        "Sie beschreiben oder erklären Phänomene.",
+        "Sie ermöglichen Vorhersagen.",
+        "Sie beruhen auf wissenschaftlichen Erkenntnissen."
+    ],
+    correct: [0,1,2,3],
+    explanation: "Theorien beschreiben, erklären und ermöglichen Vorhersagen auf wissenschaftlicher Grundlage."
+},
+
+{
+    id: 538,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welcher Begriff beschreibt die kleinste inhaltliche Einheit einer Theorie?",
+    answers: [
+        "Konzept",
+        "Metaparadigma",
+        "Hypothese",
+        "Pflegemodell"
+    ],
+    correct: 0,
+    explanation: "Konzepte bilden die grundlegenden Bausteine einer Theorie."
+},
+
+{
+    id: 539,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussage beschreibt den Unterschied zwischen Konzept und Theorie am besten?",
+    answers: [
+        "Ein Konzept beschreibt ein einzelnes Phänomen, eine Theorie verbindet mehrere Konzepte.",
+        "Konzepte und Theorien bedeuten dasselbe.",
+        "Theorien bestehen nur aus Definitionen.",
+        "Konzepte sind umfangreicher als Theorien."
+    ],
+    correct: 0,
+    explanation: "Theorien setzen sich aus mehreren logisch verbundenen Konzepten zusammen."
+},
+
+{
+    id: 540,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aufgaben erfüllen Theorien?",
+    answers: [
+        "Phänomene beschreiben",
+        "Phänomene erklären",
+        "Phänomene vorhersagen",
+        "Pflegerisches Handeln begründen"
+    ],
+    correct: [0,1,2,3],
+    explanation: "Theorien beschreiben, erklären und prognostizieren Phänomene und liefern die Grundlage professionellen Handelns."
+},
+
+{
+    id: 541,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Warum reichen einzelne Konzepte nicht aus, um Pflegephänomene vollständig zu erklären?",
+    answers: [
+        "Erst die Verbindung mehrerer Konzepte ermöglicht eine umfassende Erklärung.",
+        "Konzepte besitzen keine wissenschaftliche Bedeutung.",
+        "Konzepte dürfen nur in der Forschung verwendet werden.",
+        "Konzepte beschreiben ausschließlich Krankheiten."
+    ],
+    correct: 0,
+    explanation: "Einzelne Konzepte beschreiben nur Teilaspekte eines Phänomens."
+},
+
+{
+    id: 542,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen zum Verhältnis von Konzepten und Theorien treffen zu?",
+    answers: [
+        "Theorien bestehen aus Konzepten.",
+        "Konzepte werden innerhalb einer Theorie miteinander verknüpft.",
+        "Theorien besitzen eine größere Erklärungskraft als einzelne Konzepte.",
+        "Konzepte und Theorien verfolgen unterschiedliche Aufgaben."
+    ],
+    correct: [0,1,2,3],
+    explanation: "Konzepte und Theorien ergänzen sich und erfüllen unterschiedliche wissenschaftliche Funktionen."
+},
+
+{
+    id: 543,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welches Ziel verfolgt die Entwicklung wissenschaftlicher Theorien?",
+    answers: [
+        "Pflegephänomene systematisch zu beschreiben, zu erklären und professionelles Handeln zu unterstützen",
+        "Ausschließlich neue Pflegestandards zu entwickeln",
+        "Diagnosen zu ersetzen",
+        "Pflegedokumentationen zu vereinfachen"
+    ],
+    correct: 0,
+    explanation: "Theorien bilden die wissenschaftliche Grundlage professioneller Pflege."
+},
+
+{
+    id: 544,
+    type: "multiple",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Welche Aussagen treffen auf wissenschaftliche Konzepte zu?",
+    answers: [
+        "Sie müssen eindeutig definiert sein.",
+        "Sie beschreiben ein bestimmtes Phänomen.",
+        "Sie können Bestandteil verschiedener Theorien sein.",
+        "Sie sind die Grundlage wissenschaftlicher Kommunikation."
+    ],
+    correct: [0,1,2,3],
+    explanation: "Konzepte sind klar definierte Begriffe und bilden die Basis wissenschaftlicher Theorien."
+},
+
+{
+    id: 545,
+    type: "single",
+    difficulty: "schwer",
+    category: "grundlagen",
+    question: "Warum bilden Konzepte und Theorien die Grundlage der Pflegewissenschaft?",
+    answers: [
+        "Sie ermöglichen ein systematisches Verständnis pflegerischer Phänomene und begründen professionelles Handeln.",
+        "Sie ersetzen praktische Erfahrungen vollständig.",
+        "Sie dienen ausschließlich der Forschung.",
+        "Sie beschreiben nur medizinische Inhalte."
+    ],
+    correct: 0,
+    explanation: "Konzepte und Theorien schaffen die wissenschaftliche Grundlage für professionelles pflegerisches Denken und Handeln."
 }
 ];

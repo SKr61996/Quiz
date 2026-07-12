@@ -28,98 +28,138 @@ const Quiz = {
     },
 
     /* ==========================================
-       Start
+       Initialisierung
     ========================================== */
 
     init() {
 
-    this.loadQuestions();
+        this.loadQuestions();
+        this.loadStorage();
+        this.registerButtons();
+        this.updateStatistics();
 
-    this.loadStorage();
+    },
 
-    this.registerButtons();
+    /* ==========================================
+       Buttons registrieren
+    ========================================== */
 
-    this.updateStatistics();
-
-
-},
     registerButtons() {
-            const startLearningButton =
-        document.getElementById("start-learning");
 
-    if(startLearningButton){
+        const startLearningButton =
+            document.getElementById("start-learning");
 
-        startLearningButton.addEventListener(
+        if (startLearningButton) {
 
-            "click",
+            startLearningButton.addEventListener(
+                "click",
+                () => {
+                    this.startLearningQuiz();
+                }
+            );
 
-            ()=>{
+        }
 
-                this.startLearningQuiz();
+        const nextButton =
+            document.getElementById("next-question");
 
-            }
+        if (nextButton) {
 
-        );
+            nextButton.addEventListener(
+                "click",
+                () => {
+                    this.nextQuestion();
+                }
+            );
 
-    }
-    const nextButton =
-        document.getElementById("next-question");
+        }
 
-    if(nextButton){
+        const previousButton =
+            document.getElementById("previous-question");
 
-        nextButton.addEventListener(
+        if (previousButton) {
 
-            "click",
+            previousButton.addEventListener(
+                "click",
+                () => {
+                    this.previousQuestion();
+                }
+            );
 
-            ()=>{
+        }
 
-                this.nextQuestion();
+        const favoriteButton =
+            document.getElementById("favorite-button");
 
-            }
+        if (favoriteButton) {
 
-        );
+            favoriteButton.addEventListener(
+                "click",
+                () => {
+                    this.toggleFavorite();
+                }
+            );
 
-    }
+        }
 
-    const previousButton =
-        document.getElementById("previous-question");
+        const repeatWrongButton =
+            document.getElementById("repeat-wrong");
 
-    if(previousButton){
+        if (repeatWrongButton) {
 
-        previousButton.addEventListener(
+            repeatWrongButton.addEventListener(
+                "click",
+                () => {
+                    this.repeatWrongQuestions();
+                }
+            );
 
-            "click",
+        }
 
-            ()=>{
+        const restartButton =
+            document.getElementById("restart-quiz");
 
-                this.previousQuestion();
+        if (restartButton) {
 
-            }
+            restartButton.addEventListener(
+                "click",
+                () => {
+                    this.restart();
+                }
+            );
 
-        );
+        }
 
-    }
+        const backDashboardButton =
+            document.getElementById("back-dashboard");
 
-    const favoriteButton =
-        document.getElementById("favorite-button");
+        if (backDashboardButton) {
 
-    if(favoriteButton){
+            backDashboardButton.addEventListener(
+                "click",
+                () => {
+                    this.showPage("dashboard");
+                }
+            );
 
-        favoriteButton.addEventListener(
+        }
 
-            "click",
+        const continueLearningButton =
+            document.getElementById("continue-learning");
 
-            ()=>{
+        if (continueLearningButton) {
 
-                this.toggleFavorite();
+            continueLearningButton.addEventListener(
+                "click",
+                () => {
+                    this.showLearningSetup();
+                }
+            );
 
-            }
+        }
 
-        );
+    },
 
-    }
-
-},
     /* ==========================================
        Lernquiz starten
     ========================================== */
@@ -128,75 +168,68 @@ const Quiz = {
 
         const selectedTopics =
             Array.from(
-
                 document.querySelectorAll(
-
                     'input[name="learning-topic"]:checked'
-
                 )
-
             ).map(
-
                 input => input.value
-
             );
 
         const selectedDifficulties =
             Array.from(
-
                 document.querySelectorAll(
-
                     'input[name="learning-difficulty"]:checked'
-
                 )
-
             ).map(
-
                 input => input.value
-
             );
 
         const questionCountElement =
             document.getElementById(
-
                 "learning-question-count"
-
             );
 
         const message =
             document.getElementById(
-
                 "learning-setup-message"
-
             );
 
-        if(selectedTopics.length === 0){
+        if (selectedTopics.length === 0) {
 
-            message.textContent =
-                "Bitte wähle mindestens ein Themengebiet aus.";
+            if (message) {
 
-            message.classList.remove("hidden");
+                message.textContent =
+                    "Bitte wähle mindestens ein Themengebiet aus.";
 
-            return;
+                message.classList.remove("hidden");
 
-        }
-
-        if(selectedDifficulties.length === 0){
-
-            message.textContent =
-                "Bitte wähle mindestens eine Schwierigkeitsstufe aus.";
-
-            message.classList.remove("hidden");
+            }
 
             return;
 
         }
 
-        message.classList.add("hidden");
+        if (selectedDifficulties.length === 0) {
+
+            if (message) {
+
+                message.textContent =
+                    "Bitte wähle mindestens eine Schwierigkeitsstufe aus.";
+
+                message.classList.remove("hidden");
+
+            }
+
+            return;
+
+        }
+
+        if (message) {
+            message.classList.add("hidden");
+        }
 
         let filteredQuestions =
             getAllQuestions().filter(
-
                 question => {
 
                     const questionTopic =
@@ -206,27 +239,25 @@ const Quiz = {
                         question.difficulty || "mittel";
 
                     return (
-
-                        selectedTopics.includes(
-                            questionTopic
-                        ) &&
-
+                        selectedTopics.includes(questionTopic) &&
                         selectedDifficulties.includes(
                             questionDifficulty
                         )
-
                     );
 
                 }
-
             );
 
-        if(filteredQuestions.length === 0){
+        if (filteredQuestions.length === 0) {
 
-            message.textContent =
-                "Für diese Auswahl wurden keine passenden Fragen gefunden.";
+            if (message) {
 
-            message.classList.remove("hidden");
+                message.textContent =
+                    "Für diese Auswahl wurden keine passenden Fragen gefunden.";
+
+                message.classList.remove("hidden");
+
+            }
 
             return;
 
@@ -235,20 +266,19 @@ const Quiz = {
         this.shuffleArray(filteredQuestions);
 
         const selectedCount =
-            questionCountElement.value;
+            questionCountElement
+                ? questionCountElement.value
+                : "all";
 
-        if(selectedCount !== "all"){
+        if (selectedCount !== "all") {
 
             const maximum =
                 Number(selectedCount);
 
             filteredQuestions =
                 filteredQuestions.slice(
-
                     0,
-
                     maximum
-
                 );
 
         }
@@ -257,27 +287,12 @@ const Quiz = {
             filteredQuestions;
 
         this.state.currentQuestion = 0;
-
+        this.state.score = 0;
+        this.state.answered = 0;
         this.state.mode = "lernen";
 
-        const setup =
-            document.getElementById(
-
-                "learning-setup"
-
-            );
-
-        const quiz =
-            document.getElementById(
-
-                "learning-quiz"
-
-            );
-
-        setup.classList.add("hidden");
-
-        quiz.classList.remove("hidden");
-
+        this.updateStatistics();
+        this.showLearningQuiz();
         this.loadQuestion();
 
     },
@@ -288,55 +303,116 @@ const Quiz = {
 
     getQuestionTopic(question) {
 
-        if(question.topic){
+        const categoryNames = {
 
-            return question.topic;
+            pflegewissenschaft:
+                "Pflegewissenschaft",
+
+            gesundheit:
+                "Gesundheit",
+
+            praevention:
+                "Prävention",
+
+            forschung:
+                "Forschung",
+
+            skalenniveaus:
+                "Forschung",
+
+            pflegetheorien:
+                "Pflegetheorien",
+
+            meleis:
+                "Pflegetheorien",
+
+            grundlagen:
+                "Grundlagen der Pflegetheorien",
+
+            metaparadigma:
+                "Metaparadigma",
+
+            ebn:
+                "Evidence Based Nursing",
+
+            evidencebasednursing:
+                "Evidence Based Nursing",
+
+            professionalisierung:
+                "Professionalisierung",
+
+            klinischepflegewissenschaft:
+                "Pflegewissenschaft"
+
+        };
+
+        if (question.topic) {
+
+            return (
+                categoryNames[question.topic] ||
+                question.topic
+            );
+
+        }
+
+        if (question.category) {
+
+            return (
+                categoryNames[question.category] ||
+                question.category
+            );
 
         }
 
         const id =
-            question.id;
+            Number(question.id);
 
-        if(id >= 1 && id <= 65){
-
+        if (id >= 1 && id <= 65) {
             return "Pflegewissenschaft";
-
         }
 
-        if(id >= 66 && id <= 105){
-
-            return "Diagnostik";
-
+        if (id >= 66 && id <= 105) {
+            return "Prävention";
         }
 
-        if(id >= 106 && id <= 145){
-
+        if (id >= 106 && id <= 145) {
             return "Evidence Based Nursing";
-
         }
 
-        if(id >= 146 && id <= 195){
-
+        if (id >= 146 && id <= 195) {
             return "Gesundheit";
-
         }
 
-        if(id >= 196 && id <= 295){
-
+        if (id >= 196 && id <= 295) {
             return "Forschung";
-
         }
 
-        if(id >= 296 && id <= 325){
-
+        if (id >= 296 && id <= 325) {
             return "Professionalisierung";
-
         }
 
-        if(id >= 326 && id <= 395){
-
+        if (id >= 326 && id <= 395) {
             return "Pflegetheorien";
+        }
 
+        if (id >= 396 && id <= 445) {
+            return "Metaparadigma";
+        }
+
+        if (id >= 446 && id <= 465) {
+            return "Pflegetheorien";
+        }
+
+        if (id >= 466 && id <= 485) {
+            return "Forschung";
+        }
+
+        if (id >= 486 && id <= 495) {
+            return "Pflegewissenschaft";
+        }
+
+        if (id >= 496) {
+            return "Grundlagen der Pflegetheorien";
         }
 
         return "";
@@ -349,8 +425,20 @@ const Quiz = {
 
     loadQuestions() {
 
+        if (typeof getAllQuestions !== "function") {
+
+            console.error(
+                "Die Funktion getAllQuestions() wurde nicht gefunden."
+            );
+
+            this.state.questions = [];
+
+            return;
+
+        }
+
         this.state.questions =
-            getAllQuestions()
+            getAllQuestions();
 
         this.shuffleQuestions();
 
@@ -358,39 +446,36 @@ const Quiz = {
 
     shuffleQuestions() {
 
+        this.shuffleArray(
+            this.state.questions
+        );
+
+    },
+
+    shuffleArray(array) {
+
         for (
-
-            let i =
-                this.state.questions.length - 1;
-
+            let i = array.length - 1;
             i > 0;
-
             i--
-
         ) {
 
             const j =
                 Math.floor(
-
                     Math.random() * (i + 1)
-
                 );
 
             [
-
-                this.state.questions[i],
-
-                this.state.questions[j]
-
+                array[i],
+                array[j]
             ] = [
-
-                this.state.questions[j],
-
-                this.state.questions[i]
-
+                array[j],
+                array[i]
             ];
 
         }
+
+        return array;
 
     },
 
@@ -400,19 +485,24 @@ const Quiz = {
 
     loadStorage() {
 
-        const data = Storage.load();
+        const data =
+            Storage.load() || {};
 
         this.state.score =
-            data.score;
+            Number(data.score) || 0;
 
         this.state.answered =
-            data.answered;
+            Number(data.answered) || 0;
 
         this.state.favoriteQuestions =
-            data.favoriteQuestions;
+            Array.isArray(data.favoriteQuestions)
+                ? data.favoriteQuestions
+                : [];
 
         this.state.wrongQuestions =
-            data.wrongQuestions;
+            Array.isArray(data.wrongQuestions)
+                ? data.wrongQuestions
+                : [];
 
     },
 
@@ -447,7 +537,8 @@ const Quiz = {
         ];
 
     },
-        /* ==========================================
+
+    /* ==========================================
        Frage anzeigen
     ========================================== */
 
@@ -465,104 +556,166 @@ const Quiz = {
         }
 
         const counter =
-            document.getElementById("question-counter");
+            document.getElementById(
+                "question-counter"
+            );
 
         const progress =
-            document.getElementById("progress-fill");
+            document.getElementById(
+                "progress-fill"
+            );
 
         const text =
-            document.getElementById("question-text");
+            document.getElementById(
+                "question-text"
+            );
 
         const answers =
-            document.getElementById("answers");
+            document.getElementById(
+                "answers"
+            );
 
         const feedback =
-            document.getElementById("feedback");
+            document.getElementById(
+                "feedback"
+            );
 
         const nextButton =
-            document.getElementById("next-question");
+            document.getElementById(
+                "next-question"
+            );
 
-        counter.textContent =
-            `Frage ${this.state.currentQuestion + 1} von ${this.state.questions.length}`;
+        const previousButton =
+            document.getElementById(
+                "previous-question"
+            );
 
-        const percent =
+        if (counter) {
 
-            ((this.state.currentQuestion + 1) /
+            counter.textContent =
+                `Frage ${this.state.currentQuestion + 1} von ${this.state.questions.length}`;
 
-            this.state.questions.length) * 100;
+        }
 
-        progress.style.width =
-            percent + "%";
+        if (progress) {
 
-        text.textContent =
-            question.question;
+            const percent =
+                (
+                    (
+                        this.state.currentQuestion + 1
+                    ) /
+                    this.state.questions.length
+                ) * 100;
+
+            progress.style.width =
+                percent + "%";
+
+        }
+
+        if (text) {
+
+            text.textContent =
+                question.question;
+
+        }
+
+        if (!answers) {
+
+            console.error(
+                "Der Antwortbereich #answers wurde nicht gefunden."
+            );
+
+            return;
+
+        }
 
         answers.innerHTML = "";
 
-        feedback.classList.add("hidden");
+        if (feedback) {
 
-        nextButton.disabled = true;
-
-        /* ==========================
-           Antworten mischen
-        ========================== */
-
-        const shuffledAnswers =
-            question.answers.map(
-
-                (answer,index)=>({
-
-                    text:answer,
-
-                    index:index
-
-                })
-
+            feedback.classList.add("hidden");
+            feedback.classList.remove(
+                "correct",
+                "wrong"
             );
 
-        this.shuffleArray(shuffledAnswers);
+        }
 
-        shuffledAnswers.forEach(answer=>{
+        if (nextButton) {
+            nextButton.disabled = true;
+        }
 
-            const label =
-                document.createElement("label");
+        if (previousButton) {
 
-            label.className =
-                "answer";
+            previousButton.disabled =
+                this.state.currentQuestion === 0;
 
-            const input =
-                document.createElement("input");
+        }
 
-            input.type =
+        const questionAnswers =
+            Array.isArray(question.answers)
+                ? question.answers
+                : [];
 
-                question.type==="multiple"
+        const shuffledAnswers =
+            questionAnswers.map(
+                (answer, index) => ({
+                    text: answer,
+                    index: index
+                })
+            );
 
-                ? "checkbox"
+        this.shuffleArray(
+            shuffledAnswers
+        );
 
-                : "radio";
+        shuffledAnswers.forEach(
+            answer => {
 
-            input.name =
-                "question";
+                const label =
+                    document.createElement(
+                        "label"
+                    );
 
-            input.value =
-                answer.index;
+                label.className =
+                    "answer";
 
-            const span =
-                document.createElement("span");
+                const input =
+                    document.createElement(
+                        "input"
+                    );
 
-            span.textContent =
-                answer.text;
+                input.type =
+                    question.type === "multiple"
+                        ? "checkbox"
+                        : "radio";
 
-            label.appendChild(input);
+                input.name =
+                    "question";
 
-            label.appendChild(span);
+                input.value =
+                    answer.index;
 
-            answers.appendChild(label);
+                const span =
+                    document.createElement(
+                        "span"
+                    );
 
-        });
+                span.textContent =
+                    answer.text;
+
+                label.appendChild(input);
+                label.appendChild(span);
+
+                answers.appendChild(label);
+
+            }
+        );
 
         const checkButton =
-            document.createElement("button");
+            document.createElement(
+                "button"
+            );
 
         checkButton.id =
             "check-answer";
@@ -571,207 +724,285 @@ const Quiz = {
             "Antwort prüfen";
 
         checkButton.addEventListener(
-
             "click",
-
-            ()=>{
-
+            () => {
                 this.checkAnswer();
-
             }
-
         );
 
-        answers.appendChild(checkButton);
+        answers.appendChild(
+            checkButton
+        );
 
         this.updateFavoriteButton();
-
         this.startTimer();
 
     },
 
     /* ==========================================
-       Antworten mischen
+       Richtige Antworten vereinheitlichen
     ========================================== */
 
-    shuffleArray(array){
+    getCorrectAnswers(question) {
 
-        for(
+        if (Array.isArray(question.correct)) {
 
-            let i=array.length-1;
-
-            i>0;
-
-            i--
-
-        ){
-
-            const j=Math.floor(
-
-                Math.random()*(i+1)
-
+            return question.correct.map(
+                value => Number(value)
             );
 
+        }
+
+        return [
+            Number(question.correct)
+        ];
+
+    },
+
+    /* ==========================================
+       Antwort prüfen
+    ========================================== */
+
+    checkAnswer() {
+
+        clearInterval(
+            this.state.timer
+        );
+
+        const question =
+            this.getQuestion();
+
+        if (!question) {
+            return;
+        }
+
+        const selected =
+            Array.from(
+                document.querySelectorAll(
+                    "#answers input:checked"
+                )
+            ).map(
+                input =>
+                    Number(input.value)
+            );
+
+        if (selected.length === 0) {
+
+            alert(
+                "Bitte wähle mindestens eine Antwort aus."
+            );
+
+            return;
+
+        }
+
+        selected.sort(
+            (a, b) => a - b
+        );
+
+        const correctAnswers =
+            this.getCorrectAnswers(
+                question
+            );
+
+        correctAnswers.sort(
+            (a, b) => a - b
+        );
+
+        const isCorrect =
+            selected.length ===
+                correctAnswers.length &&
+
+            selected.every(
+                (value, index) =>
+                    value ===
+                    correctAnswers[index]
+            );
+
+        this.state.answered++;
+
+        const labels =
+            document.querySelectorAll(
+                "#answers label.answer"
+            );
+
+        labels.forEach(
+            label => {
+
+                const input =
+                    label.querySelector(
+                        "input"
+                    );
+
+                if (!input) {
+                    return;
+                }
+
+                input.disabled = true;
+
+                const value =
+                    Number(input.value);
+
+                if (
+                    correctAnswers.includes(
+                        value
+                    )
+                ) {
+
+                    label.classList.add(
+                        "correct-answer"
+                    );
+
+                }
+
+                if (
+                    input.checked &&
+                    !correctAnswers.includes(
+                        value
+                    )
+                ) {
+
+                    label.classList.add(
+                        "wrong-answer"
+                    );
+
+                }
+
+            }
+        );
+
+        if (isCorrect) {
+
+            this.state.score++;
+
+            this.removeWrongQuestion(
+                question.id
+            );
+
+        } else {
+
+            this.addWrongQuestion(
+                question.id
+            );
+
+        }
+
+        this.showFeedback(
+            isCorrect
+        );
+
+        this.updateStatistics();
+        this.saveStorage();
+
+        const nextButton =
+            document.getElementById(
+                "next-question"
+            );
+
+        if (nextButton) {
+
+            nextButton.disabled = false;
+
+        }
+
+        const checkButton =
+            document.getElementById(
+                "check-answer"
+            );
+
+        if (checkButton) {
+
+            checkButton.disabled = true;
+
+        }
+
+    },
+
+    /* ==========================================
+       Falsche Fragen verwalten
+    ========================================== */
+
+    addWrongQuestion(questionId) {
+
+        if (
+            !this.state.wrongQuestions.includes(
+                questionId
+            )
+        ) {
+
+            this.state.wrongQuestions.push(
+                questionId
+            );
+
+        }
+
+    },
+
+    removeWrongQuestion(questionId) {
+
+        this.state.wrongQuestions =
+            this.state.wrongQuestions.filter(
+                id => id !== questionId
+            );
+
+    },
+
+    repeatWrongQuestions() {
+
+        clearInterval(
+            this.state.timer
+        );
+
+        const wrongIds =
             [
-
-                array[i],
-
-                array[j]
-
-            ]=[
-
-                array[j],
-
-                array[i]
-
+                ...new Set(
+                    this.state.wrongQuestions
+                )
             ];
 
-        }
-
-        return array;
-
-    },
-        /* ==========================================
-       Antwort prüfen
-    ========================================== */
-
-    checkAnswer() {
-
-        clearInterval(this.state.timer);
-
-        const question =
-            this.getQuestion();
-
-        const selected =
-            Array.from(
-
-                document.querySelectorAll(
-
-                    "#answers input:checked"
-
-                )
-
-            ).map(
-
-                input => Number(input.value)
-
-            );
-
-        if(selected.length===0){
+        if (wrongIds.length === 0) {
 
             alert(
-
-                "Bitte wähle mindestens eine Antwort."
-
+                "Aktuell sind keine falsch beantworteten Fragen gespeichert."
             );
 
             return;
 
         }
 
-        selected.sort();
-
-        const correct =
-            [...question.correct].sort();
-
-        const isCorrect =
-
-            selected.length===correct.length &&
-
-            selected.every(
-
-                (value,index)=>
-
-                    value===correct[index]
-
+        const wrongQuestions =
+            getAllQuestions().filter(
+                question =>
+                    wrongIds.includes(
+                        question.id
+                    )
             );
 
-        this.state.answered++;
+        if (
+            wrongQuestions.length === 0
+        ) {
 
-        const labels =
-            document.querySelectorAll(
-
-                "#answers label"
-
+            alert(
+                "Die gespeicherten Fragen konnten nicht gefunden werden."
             );
 
-        labels.forEach(label=>{
-
-            const input =
-                label.querySelector("input");
-
-            input.disabled=true;
-
-            const value =
-                Number(input.value);
-
-            if(
-
-                question.correct.includes(value)
-
-            ){
-
-                label.classList.add(
-
-                    "correct-answer"
-
-                );
-
-            }
-
-            if(
-
-                input.checked &&
-
-                !question.correct.includes(value)
-
-            ){
-
-                label.classList.add(
-
-                    "wrong-answer"
-
-                );
-
-            }
-
-        });
-
-        if(isCorrect){
-
-            this.state.score++;
-
-        }else{
-
-            this.state.wrongQuestions.push(
-
-                question.id
-
-            );
+            return;
 
         }
 
-        this.showFeedback(isCorrect);
+        this.state.questions =
+            wrongQuestions;
 
+        this.state.currentQuestion = 0;
+        this.state.score = 0;
+        this.state.answered = 0;
+        this.state.mode = "falsche-fragen";
+
+        this.shuffleQuestions();
         this.updateStatistics();
 
-        this.saveStorage();
-
-        document
-            .getElementById(
-
-                "next-question"
-
-            )
-            .disabled=false;
-
-        document
-            .getElementById(
-
-                "check-answer"
-
-            )
-            .disabled=true;
+        this.showLearningQuiz();
+        this.loadQuestion();
 
     },
 
@@ -779,287 +1010,82 @@ const Quiz = {
        Feedback
     ========================================== */
 
-    showFeedback(correct){
+    showFeedback(isCorrect) {
 
         const question =
             this.getQuestion();
 
         const feedback =
-            document.getElementById("feedback");
+            document.getElementById(
+                "feedback"
+            );
 
         const title =
-            document.getElementById("feedback-title");
+            document.getElementById(
+                "feedback-title"
+            );
 
         const text =
-            document.getElementById("feedback-text");
+            document.getElementById(
+                "feedback-text"
+            );
+
+        if (!feedback) {
+            return;
+        }
 
         feedback.classList.remove(
-
-            "hidden"
-
+            "hidden",
+            "correct",
+            "wrong"
         );
 
-        if(correct){
-
-            feedback.classList.remove(
-
-                "wrong"
-
-            );
+        if (isCorrect) {
 
             feedback.classList.add(
-
                 "correct"
-
             );
 
-            title.textContent="✅ Richtig";
+            if (title) {
+                title.textContent =
+                    "✅ Richtig";
+            }
 
-        }else{
-
-            feedback.classList.remove(
-
-                "correct"
-
-            );
+        } else {
 
             feedback.classList.add(
-
                 "wrong"
-
             );
 
-            title.textContent="❌ Leider falsch";
-
-        }
-
-        text.textContent=
-
-            question.explanation;
-
-    },
-        /* ==========================================
-       Antwort prüfen
-    ========================================== */
-
-    checkAnswer() {
-
-        clearInterval(this.state.timer);
-
-        const question =
-            this.getQuestion();
-
-        const selected =
-            Array.from(
-
-                document.querySelectorAll(
-
-                    "#answers input:checked"
-
-                )
-
-            ).map(
-
-                input => Number(input.value)
-
-            );
-
-        if(selected.length===0){
-
-            alert(
-
-                "Bitte wähle mindestens eine Antwort."
-
-            );
-
-            return;
-
-        }
-
-        selected.sort();
-
-        const correct =
-            [...question.correct].sort();
-
-        const isCorrect =
-
-            selected.length===correct.length &&
-
-            selected.every(
-
-                (value,index)=>
-
-                    value===correct[index]
-
-            );
-
-        this.state.answered++;
-
-        const labels =
-            document.querySelectorAll(
-
-                "#answers label"
-
-            );
-
-        labels.forEach(label=>{
-
-            const input =
-                label.querySelector("input");
-
-            input.disabled=true;
-
-            const value =
-                Number(input.value);
-
-            if(
-
-                question.correct.includes(value)
-
-            ){
-
-                label.classList.add(
-
-                    "correct-answer"
-
-                );
-
+            if (title) {
+                title.textContent =
+                    "❌ Leider falsch";
             }
 
-            if(
-
-                input.checked &&
-
-                !question.correct.includes(value)
-
-            ){
-
-                label.classList.add(
-
-                    "wrong-answer"
-
-                );
-
-            }
-
-        });
-
-        if(isCorrect){
-
-            this.state.score++;
-
-        }else{
-
-            this.state.wrongQuestions.push(
-
-                question.id
-
-            );
-
         }
 
-        this.showFeedback(isCorrect);
+        if (text) {
 
-        this.updateStatistics();
+            text.textContent =
+                question.explanation ||
+                "Für diese Frage ist noch keine Erklärung hinterlegt.";
 
-        this.saveStorage();
-
-        document
-            .getElementById(
-
-                "next-question"
-
-            )
-            .disabled=false;
-
-        document
-            .getElementById(
-
-                "check-answer"
-
-            )
-            .disabled=true;
+        }
 
     },
 
     /* ==========================================
-       Feedback
-    ========================================== */
-
-    showFeedback(correct){
-
-        const question =
-            this.getQuestion();
-
-        const feedback =
-            document.getElementById("feedback");
-
-        const title =
-            document.getElementById("feedback-title");
-
-        const text =
-            document.getElementById("feedback-text");
-
-        feedback.classList.remove(
-
-            "hidden"
-
-        );
-
-        if(correct){
-
-            feedback.classList.remove(
-
-                "wrong"
-
-            );
-
-            feedback.classList.add(
-
-                "correct"
-
-            );
-
-            title.textContent="✅ Richtig";
-
-        }else{
-
-            feedback.classList.remove(
-
-                "correct"
-
-            );
-
-            feedback.classList.add(
-
-                "wrong"
-
-            );
-
-            title.textContent="❌ Leider falsch";
-
-        }
-
-        text.textContent=
-
-            question.explanation;
-
-    },
-        /* ==========================================
        Nächste Frage
     ========================================== */
 
-    nextQuestion(){
+    nextQuestion() {
 
         this.state.currentQuestion++;
 
-        if(
-
+        if (
             this.state.currentQuestion >=
-
             this.state.questions.length
-
-        ){
+        ) {
 
             this.finishQuiz();
 
@@ -1075,39 +1101,50 @@ const Quiz = {
        Vorherige Frage
     ========================================== */
 
-    previousQuestion(){
+    previousQuestion() {
 
-        if(this.state.currentQuestion>0){
+        if (
+            this.state.currentQuestion > 0
+        ) {
 
             this.state.currentQuestion--;
 
+            this.loadQuestion();
+
         }
 
-        this.loadQuestion();
-
     },
-        /* ==========================================
+
+    /* ==========================================
        Quiz neu starten
     ========================================== */
 
-    restart(){
+    restart() {
 
-        clearInterval(this.state.timer);
+        clearInterval(
+            this.state.timer
+        );
+
+        if (
+            !this.state.questions ||
+            this.state.questions.length === 0
+        ) {
+
+            this.showLearningSetup();
+
+            return;
+
+        }
 
         this.state.currentQuestion = 0;
-
         this.state.score = 0;
-
         this.state.answered = 0;
 
-        this.state.wrongQuestions = [];
-
         this.shuffleQuestions();
-
         this.updateStatistics();
-
         this.saveStorage();
 
+        this.showLearningQuiz();
         this.loadQuestion();
 
     },
@@ -1116,126 +1153,201 @@ const Quiz = {
        Favoriten
     ========================================== */
 
-    toggleFavorite(){
+    toggleFavorite() {
 
-        const question = this.getQuestion();
+        const question =
+            this.getQuestion();
 
-        const id = question.id;
+        if (!question) {
+            return;
+        }
+
+        const id =
+            question.id;
 
         const index =
+            this.state.favoriteQuestions.indexOf(
+                id
+            );
 
-            this.state.favoriteQuestions.indexOf(id);
+        if (index === -1) {
 
-        if(index === -1){
+            this.state.favoriteQuestions.push(
+                id
+            );
 
-            this.state.favoriteQuestions.push(id);
+        } else {
 
-        }else{
-
-            this.state.favoriteQuestions.splice(index,1);
+            this.state.favoriteQuestions.splice(
+                index,
+                1
+            );
 
         }
 
         this.saveStorage();
-
         this.updateFavoriteButton();
+        this.updateStatistics();
 
     },
 
-    updateFavoriteButton(){
+    updateFavoriteButton() {
 
         const button =
-
-            document.getElementById("favorite-button");
-
-        if(!button){
-
-            return;
-
-        }
-
-        const question =
-
-            this.getQuestion();
-
-        if(
-
-            this.state.favoriteQuestions.includes(
-
-                question.id
-
-            )
-
-        ){
-
-            button.textContent = "★ Favorit";
-
-            button.classList.add(
-
-                "favorite-active"
-
+            document.getElementById(
+                "favorite-button"
             );
 
-        }else{
+        const question =
+            this.getQuestion();
 
-            button.textContent = "☆ Favorit";
+        if (
+            !button ||
+            !question
+        ) {
+            return;
+        }
+
+        if (
+            this.state.favoriteQuestions.includes(
+                question.id
+            )
+        ) {
+
+            button.textContent =
+                "★ Favorit";
+
+            button.classList.add(
+                "favorite-active"
+            );
+
+        } else {
+
+            button.textContent =
+                "☆ Favorit";
 
             button.classList.remove(
-
                 "favorite-active"
-
             );
 
         }
 
     },
-       /* ==========================================
+
+    /* ==========================================
        Statistik
     ========================================== */
 
-    updateStatistics(){
+    updateStatistics() {
 
         const answered =
-            document.getElementById("stats-answered");
+            document.getElementById(
+                "stats-answered"
+            );
 
         const correct =
-            document.getElementById("stats-correct");
+            document.getElementById(
+                "stats-correct"
+            );
 
         const percent =
-            document.getElementById("stats-percent");
+            document.getElementById(
+                "stats-percent"
+            );
 
-        if(answered){
+        const favorites =
+            document.getElementById(
+                "stats-favorites"
+            );
+
+        const dashboardAnswered =
+            document.getElementById(
+                "dashboard-answered"
+            );
+
+        const dashboardPercent =
+            document.getElementById(
+                "dashboard-percent"
+            );
+
+        const dashboardFavorites =
+            document.getElementById(
+                "dashboard-favorites"
+            );
+
+        const dashboardWrong =
+            document.getElementById(
+                "dashboard-wrong"
+            );
+
+        const successRate =
+            this.state.answered === 0
+                ? 0
+                : (
+                    this.state.score /
+                    this.state.answered
+                ) * 100;
+
+        if (answered) {
 
             answered.textContent =
                 this.state.answered;
 
         }
 
-        if(correct){
+        if (correct) {
 
             correct.textContent =
                 this.state.score;
 
         }
 
-        if(percent){
-
-            const value =
-
-                this.state.answered === 0
-
-                ? 0
-
-                : (
-
-                    this.state.score /
-
-                    this.state.answered
-
-                ) * 100;
+        if (percent) {
 
             percent.textContent =
-                value.toFixed(1) + " %";
+                successRate.toFixed(1) +
+                " %";
+
+        }
+
+        if (favorites) {
+
+            favorites.textContent =
+                this.state.favoriteQuestions.length;
+
+        }
+
+        if (dashboardAnswered) {
+
+            dashboardAnswered.textContent =
+                this.state.answered +
+                (
+                    this.state.answered === 1
+                        ? " Frage"
+                        : " Fragen"
+                );
+
+        }
+
+        if (dashboardPercent) {
+
+            dashboardPercent.textContent =
+                successRate.toFixed(1) +
+                " %";
+
+        }
+
+        if (dashboardFavorites) {
+
+            dashboardFavorites.textContent =
+                this.state.favoriteQuestions.length;
+
+        }
+
+        if (dashboardWrong) {
+
+            dashboardWrong.textContent =
+                this.state.wrongQuestions.length;
 
         }
 
@@ -1245,20 +1357,27 @@ const Quiz = {
        Timer
     ========================================== */
 
-    startTimer(){
+    startTimer() {
 
-        clearInterval(this.state.timer);
+        clearInterval(
+            this.state.timer
+        );
 
-        if(this.state.timerDuration===0){
+        const timer =
+            document.getElementById(
+                "timer"
+            );
 
-            const timer =
-                document.getElementById("timer");
+        if (!timer) {
+            return;
+        }
 
-            if(timer){
+        if (
+            this.state.timerDuration === 0
+        ) {
 
-                timer.textContent="∞";
-
-            }
+            timer.textContent =
+                "⏱️ Ohne Zeitlimit";
 
             return;
 
@@ -1267,195 +1386,296 @@ const Quiz = {
         this.state.timerRemaining =
             this.state.timerDuration;
 
-        const timer =
-            document.getElementById("timer");
-
         timer.textContent =
-            "⏱ " + this.state.timerRemaining;
+            "⏱ " +
+            this.state.timerRemaining;
 
         this.state.timer =
+            setInterval(
+                () => {
 
-            setInterval(()=>{
+                    this.state.timerRemaining--;
 
-                this.state.timerRemaining--;
+                    timer.textContent =
+                        "⏱ " +
+                        this.state.timerRemaining;
 
-                timer.textContent =
+                    if (
+                        this.state.timerRemaining <= 0
+                    ) {
 
-                    "⏱ " +
+                        clearInterval(
+                            this.state.timer
+                        );
 
-                    this.state.timerRemaining;
+                        this.addWrongQuestion(
+                            this.getQuestion().id
+                        );
 
-                if(
+                        this.state.answered++;
 
-                    this.state.timerRemaining<=0
+                        this.updateStatistics();
+                        this.saveStorage();
+                        this.nextQuestion();
 
-                ){
+                    }
 
-                    clearInterval(
-
-                        this.state.timer
-
-                    );
-
-                    this.nextQuestion();
-
-                }
-
-            },1000);
+                },
+                1000
+            );
 
     },
-         /* ==========================================
+
+    /* ==========================================
        Ergebnis
     ========================================== */
 
-  finishQuiz() {
+    finishQuiz() {
 
-    clearInterval(this.state.timer);
+        clearInterval(
+            this.state.timer
+        );
 
-    const totalQuestions =
-        this.state.questions.length;
+        const totalQuestions =
+            this.state.questions.length;
 
-    const percent =
-        totalQuestions === 0
-            ? 0
-            : (this.state.score / totalQuestions) * 100;
+        const percent =
+            totalQuestions === 0
+                ? 0
+                : (
+                    this.state.score /
+                    totalQuestions
+                ) * 100;
 
-    document
-        .querySelectorAll(".page")
-        .forEach(page => {
+        this.showPage(
+            "result-page"
+        );
 
-            page.classList.remove("active");
+        const resultPercent =
+            document.getElementById(
+                "result-percent"
+            );
 
-        });
+        const resultScore =
+            document.getElementById(
+                "result-score"
+            );
 
-    const resultPage =
-        document.getElementById("result-page");
+        const resultGrade =
+            document.getElementById(
+                "result-grade"
+            );
 
-    if(resultPage) {
+        const resultStatus =
+            document.getElementById(
+                "result-status"
+            );
 
-        resultPage.classList.add("active");
+        if (resultPercent) {
 
-    }
-
-    const resultPercent =
-        document.getElementById("result-percent");
-
-    if(resultPercent) {
-
-        resultPercent.textContent =
-            percent.toFixed(1) + " %";
-
-    }
-
-    const resultScore =
-        document.getElementById("result-score");
-
-    if(resultScore) {
-
-        resultScore.textContent =
-            `${this.state.score} von ${totalQuestions} richtig`;
-
-    }
-
-    const resultGrade =
-        document.getElementById("result-grade");
-
-    if(resultGrade) {
-
-        resultGrade.textContent =
-            this.calculateGrade(percent);
-
-    }
-
-    const status =
-        document.getElementById("result-status");
-
-    if(status) {
-
-        if(percent >= 50) {
-
-            status.textContent =
-                "✅ Bestanden";
-
-            status.className =
-                "result-pass";
-
-        } else {
-
-            status.textContent =
-                "❌ Nicht bestanden";
-
-            status.className =
-                "result-fail";
+            resultPercent.textContent =
+                percent.toFixed(1) +
+                " %";
 
         }
 
-    }
+        if (resultScore) {
 
-},
-calculateGrade(percent) {
+            resultScore.textContent =
+                `${this.state.score} von ${totalQuestions} richtig`;
 
-    if(percent >= 92) {
+        }
 
-        return "Note 1 – sehr gut";
+        if (resultGrade) {
 
-    }
+            resultGrade.textContent =
+                this.calculateGrade(
+                    percent
+                );
 
-    if(percent >= 81) {
+        }
 
-        return "Note 2 – gut";
+        if (resultStatus) {
 
-    }
+            if (percent >= 50) {
 
-    if(percent >= 67) {
+                resultStatus.textContent =
+                    "✅ Bestanden";
 
-        return "Note 3 – befriedigend";
+                resultStatus.className =
+                    "result-pass";
 
-    }
+            } else {
 
-    if(percent >= 50) {
+                resultStatus.textContent =
+                    "❌ Nicht bestanden";
 
-        return "Note 4 – ausreichend";
+                resultStatus.className =
+                    "result-fail";
 
-    }
+            }
 
-    if(percent >= 30) {
+        }
 
-        return "Note 5 – mangelhaft";
+        this.updateStatistics();
+        this.saveStorage();
 
-    }
+    },
 
-    return "Note 6 – ungenügend";
+    /* ==========================================
+       Notenschlüssel
+    ========================================== */
 
-},
+    calculateGrade(percent) {
 
-    calculateGrade(percent){
+        if (percent >= 92) {
+            return "Note 1,0";
+        }
 
-        if(percent>=92) return "Note 1,0";
-        if(percent>=88) return "Note 1,3";
-        if(percent>=84) return "Note 1,7";
-        if(percent>=80) return "Note 2,0";
-        if(percent>=76) return "Note 2,3";
-        if(percent>=72) return "Note 2,7";
-        if(percent>=68) return "Note 3,0";
-        if(percent>=64) return "Note 3,3";
-        if(percent>=60) return "Note 3,7";
-        if(percent>=50) return "Note 4,0";
+        if (percent >= 88) {
+            return "Note 1,3";
+        }
+
+        if (percent >= 84) {
+            return "Note 1,7";
+        }
+
+        if (percent >= 80) {
+            return "Note 2,0";
+        }
+
+        if (percent >= 76) {
+            return "Note 2,3";
+        }
+
+        if (percent >= 72) {
+            return "Note 2,7";
+        }
+
+        if (percent >= 68) {
+            return "Note 3,0";
+        }
+
+        if (percent >= 64) {
+            return "Note 3,3";
+        }
+
+        if (percent >= 60) {
+            return "Note 3,7";
+        }
+
+        if (percent >= 50) {
+            return "Note 4,0";
+        }
 
         return "Note 5,0";
+
+    },
+
+    /* ==========================================
+       Seitenanzeige
+    ========================================== */
+
+    showPage(pageId) {
+
+        document
+            .querySelectorAll(".page")
+            .forEach(
+                page => {
+                    page.classList.remove(
+                        "active"
+                    );
+                }
+            );
+
+        const selectedPage =
+            document.getElementById(
+                pageId
+            );
+
+        if (selectedPage) {
+
+            selectedPage.classList.add(
+                "active"
+            );
+
+        }
+
+        document
+            .querySelectorAll(
+                ".nav-button"
+            )
+            .forEach(
+                button => {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.page ===
+                            pageId
+                    );
+
+                }
+            );
+
+    },
+
+    showLearningSetup() {
+
+        this.showPage("lernen");
+
+        const setup =
+            document.getElementById(
+                "learning-setup"
+            );
+
+        const quiz =
+            document.getElementById(
+                "learning-quiz"
+            );
+
+        if (setup) {
+            setup.classList.remove("hidden");
+        }
+
+        if (quiz) {
+            quiz.classList.add("hidden");
+        }
+
+    },
+
+    showLearningQuiz() {
+
+        this.showPage("lernen");
+
+        const setup =
+            document.getElementById(
+                "learning-setup"
+            );
+
+        const quiz =
+            document.getElementById(
+                "learning-quiz"
+            );
+
+        if (setup) {
+            setup.classList.add("hidden");
+        }
+
+        if (quiz) {
+            quiz.classList.remove("hidden");
+        }
 
     }
 
 };
 
+/* ==========================================
+   Quiz starten
+========================================== */
+
 document.addEventListener(
-
     "DOMContentLoaded",
-
-    ()=>{
-
+    () => {
         Quiz.init();
-
     }
-
 );
